@@ -9,6 +9,7 @@
 #DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 #Contents: . .gz .bz2
 #Description: I2P
+#SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 ##Uploaders: uploaders
 #Log: squeeze.log
 # --type=dsc changelogs.example
@@ -24,6 +25,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: wheezy.log
  --type=dsc changelogs.example
@@ -39,6 +41,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: jessie.log
  --type=dsc changelogs.example
@@ -54,6 +57,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: wheezy.log
  --type=dsc changelogs.example
@@ -69,6 +73,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: buster.log
  --type=dsc changelogs.example
@@ -84,6 +89,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: buster.log
  --type=dsc changelogs.example
@@ -99,6 +105,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: buster.log
  --type=dsc changelogs.example
@@ -113,6 +120,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: stretch-testing.log
  --type=dsc changelogs.example
@@ -128,6 +136,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: sid.log
  --type=dsc changelogs.example
@@ -143,6 +152,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: experimental.log
  --type=dsc changelogs.example
@@ -158,6 +168,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: tails-experimental.log
  --type=dsc changelogs.example
@@ -173,6 +184,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: tails-wheezy.log
  --type=dsc changelogs.example
@@ -188,6 +200,7 @@ DebIndices: Packages Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 DscIndices: Sources Release . .gz .bz2 xz.sh lzma.sh /usr/bin/rredtool
 Contents: . .gz .bz2
 Description: I2P
+SignWith: 7840E7610F28B904753549D767ECE5605BCF1346
 Uploaders: uploaders
 Log: tails-jessie.log
  --type=dsc changelogs.example

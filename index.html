@@ -30,6 +30,11 @@
                 index
               </a>
             </li>
+            <li>
+              <a href="index.html">
+                index.html
+              </a>
+            </li>
           </ul>
           <br>
           <a href="#hidenav">
@@ -63,15 +68,14 @@
     <p>
       This command:
     </p>
-    <pre><code class="language-sh">docker build -t i2p.reprepro .
-docker run -ti --volume ./debian_reprepro:/debian_reprepro i2p.reprepro
+    <pre><code class="language-sh">./go-apt-mirror.sh
 </code></pre>
     <p>
-      Will produce a
+      Will produce an
       <code>
-        ./debian_reprepro
+        ubuntu
       </code>
-      directory(owned by root, you might want to change this) in the working directory.
+      directory in the working directory.
       This will contain a fully working
       <code>
         apt

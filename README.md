@@ -11,11 +11,10 @@ Recommended Usage(Docker)
 This command:
 
 ```sh
-docker build -t i2p.reprepro .
-docker run -ti --volume ./debian_reprepro:/debian_reprepro i2p.reprepro
+./go-apt-mirror.sh
 ```
 
-Will produce a `./debian_reprepro` directory(owned by root, you might want to change this) in the working directory.
+Will produce an `ubuntu` directory in the working directory.
 This will contain a fully working `apt` repository filesystem containing I2P `.deb` packages.
 They are ready to upload to a server.
 

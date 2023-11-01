@@ -25,5 +25,5 @@ format = "plain"
 url = "https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu"
 suites = ["bionic", "focal", "jammy", "kinetic", "lunar"]
 sections = ["main"]
-# mirror_source = true
+mirror_source = true
 architectures = ["amd64", "i386"]

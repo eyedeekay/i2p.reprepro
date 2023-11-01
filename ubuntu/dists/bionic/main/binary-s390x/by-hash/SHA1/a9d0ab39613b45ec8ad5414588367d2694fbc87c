@@ -1,0 +1,6 @@
+Archive: bionic
+Version: 18.04
+Component: main
+Origin: LP-PPA-i2p-maintainers-i2p
+Label: I2P Packages
+Architecture: s390x

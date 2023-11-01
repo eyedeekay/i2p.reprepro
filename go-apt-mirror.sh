@@ -31,3 +31,6 @@ rename_bionic_to_buster() {
 }
 
 rename_lunar_to_sid
+
+mkdir ubuntu
+cp -rv debian_mirror/mirror/* ubuntu

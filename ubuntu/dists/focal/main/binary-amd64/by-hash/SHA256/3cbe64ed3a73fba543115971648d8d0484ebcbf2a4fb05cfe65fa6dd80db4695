@@ -1,0 +1,6 @@
+Archive: focal
+Version: 20.04
+Component: main
+Origin: LP-PPA-i2p-maintainers-i2p
+Label: I2P Packages
+Architecture: amd64

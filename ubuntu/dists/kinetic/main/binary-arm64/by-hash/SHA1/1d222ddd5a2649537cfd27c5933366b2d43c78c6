@@ -1,0 +1,6 @@
+Archive: kinetic
+Version: 22.10
+Component: main
+Origin: LP-PPA-i2p-maintainers-i2p
+Label: I2P Packages
+Architecture: arm64

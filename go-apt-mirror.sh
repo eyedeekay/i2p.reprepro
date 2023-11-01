@@ -14,6 +14,7 @@ ln -sf bionic oldstable
 ln -sf focal bullseye
 ln -sf focal stable
 ln -sf focal bookworm
+ln -sf focal trixie
 ln -sf focal testing
 ln -sf lunar unstable
 ln -sf lunar sid

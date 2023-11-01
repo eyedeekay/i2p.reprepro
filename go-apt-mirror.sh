@@ -34,3 +34,5 @@ rename_lunar_to_sid
 
 mkdir ubuntu
 cp -rv debian_mirror/mirror/* ubuntu
+cp index.html ubuntu/index.html
+cp *.css ubuntu

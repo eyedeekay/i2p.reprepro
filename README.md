@@ -18,6 +18,12 @@ Will produce an `ubuntu` directory in the working directory.
 This will contain a fully working `apt` repository filesystem containing I2P `.deb` packages.
 They are ready to upload to a server.
 
+The primary advantage of doing things this way is that it requires no expertise, whatsoever, and can be run with a `cron` job, like so:
+
+```
+0 5 * * 1 bash -c 'cd /home/user/i2p.reprepro/ && ./go-apt-mirror.sh && cp -rv ubuntu/* /var/www/html/'
+```
+
 I2P Ubuntu Packages Mirror
 ==========================
 

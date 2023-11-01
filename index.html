@@ -87,6 +87,15 @@
       packages.
       They are ready to upload to a server.
     </p>
+    <p>
+      The primary advantage of doing things this way is that it requires no expertise, whatsoever, and can be run with a
+      <code>
+        cron
+      </code>
+      job, like so:
+    </p>
+    <pre><code>0 5 * * 1 bash -c 'cd /home/user/i2p.reprepro/ &amp;&amp; ./go-apt-mirror.sh &amp;&amp; cp -rv ubuntu/* /var/www/html/'
+</code></pre>
     <h1>
       I2P Ubuntu Packages Mirror
     </h1>

@@ -3,11 +3,30 @@ docker container run \
     -v $(pwd)/etc/go-apt-mirror.toml:/etc/apt/mirror.toml:ro \
     -v $(pwd)/debian_mirror:/var/spool/go-apt-mirror \
     jacksgt/aptutil /go-apt-mirror
+storedir=$(pwd)
 mirrordir=$(ls -d $(pwd)/debian_mirror/.ubuntu*/ubuntu | tail -n 1)
-sudo cp -rv $mirrordir $(pwd)/debian_mirror/ubuntu_mirror
+sudo rm -rf $(pwd)/debian_mirror/mirror
+sudo cp -rv $mirrordir $(pwd)/debian_mirror/mirror
 sudo chown -R 1000:1000 $(pwd)/debian_mirror
-cp -rv $(pwd)/debian_mirror/ubuntu_mirror/* ./debian_reprepro
-reprepro -v -b ./debian_reprepro --confdir ./debian/conf --logdir ./debian_logs copysrc sid lunar i2p
-reprepro -v -b ./debian_reprepro --confdir ./debian/conf --logdir ./debian_logs copysrc bookworm focal i2p
-reprepro -v -b ./debian_reprepro --confdir ./debian/conf --logdir ./debian_logs copysrc bullseye focal i2p
-reprepro -v -b ./debian_reprepro --confdir ./debian/conf --logdir ./debian_logs copysrc buster focal i2p
+cd $(pwd)/debian_mirror/mirror/dists/
+ln -sf bionic buster
+ln -sf bionic oldstable
+ln -sf focal bullseye
+ln -sf focal stable
+ln -sf focal bookworm
+ln -sf focal testing
+ln -sf lunar unstable
+ln -sf lunar sid
+cd "$storedir"
+
+rename_lunar_to_sid() {
+    find $(pwd)/debian_mirror/mirror/pool -name '*lunar*.*' -exec bash -c 'cp -v "$0" "${0//lunar/sid}"' {} \;
+    find $(pwd)/debian_mirror/mirror/pool -name '*lunar*.*' -exec bash -c 'cp -v "$0" "${0//lunar/unstable}"' {} \;
+}
+
+rename_bionic_to_buster() {
+    find $(pwd)/debian_mirror/mirror/pool -name '*bionic*.*' -exec bash -c 'cp -v "$0" "${0//bionic/buster}"' {} \;
+    find $(pwd)/debian_mirror/mirror/pool -name '*bionic*.*' -exec bash -c 'cp -v "$0" "${0//bionic/oldstable}"' {} \;
+}
+
+rename_lunar_to_sid

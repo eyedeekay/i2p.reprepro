@@ -4,4 +4,4 @@ docker container run \
     -v $(pwd)/debian_mirror:/var/spool/go-apt-mirror \
     jacksgt/aptutil /go-apt-mirror
 mirrordir=$(ls -d $(pwd)/debian_mirror/.ubuntu*/ubuntu | tail -n 1)
-cp -rv $mirrordir $(pwd)/debian_mirror/
+cp -rv $mirrordir $(pwd)/debian_mirror/ubuntu_mirror

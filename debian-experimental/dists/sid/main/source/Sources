@@ -1,0 +1,30 @@
+Package: i2p
+Binary: i2p, libjbigi-jni, i2p-doc, i2p-router
+Version: 2.3.0-1~lunar+1
+Section: net
+Maintainer: zzz <zzz@i2pmail.org>
+Build-Depends: debhelper (>= 9.20160709), ant (>= 1.9.8), debconf, default-jdk, libjakarta-servlet-api-java, libjetty9-java (>= 9.4), libjsp-api-java, libservlet-api-java, libtaglibs-standard-jstlel-java, libtomcat9-java, dh-apparmor, bash-completion, gettext, libgetopt-java, libjson-simple-java (>= 2), libjson-simple-java (<< 3), libgmp-dev (>= 2:5.0.5), libservice-wrapper-java, po-debconf
+Architecture: any all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Directory: pool/main/i/i2p
+Files: 
+ 0ab06d425d30e3f1dab80874b8fd2ed5 6778670 i2p_2.3.0.orig.tar.bz2
+ b4c429ba9b408cba9d4a5db4e6a07e70 57016 i2p_2.3.0-1~lunar+1.debian.tar.xz
+ 1724d0f442931aae45bd26d3d712dc0e 1942 i2p_2.3.0-1~lunar+1.dsc
+Checksums-Sha1: 
+ 27621090e2d084702184737adc72a7cfce97c696 6778670 i2p_2.3.0.orig.tar.bz2
+ 7e74e8c1a93aaa3dfe43e6abc4191881edc40f9b 57016 i2p_2.3.0-1~lunar+1.debian.tar.xz
+ 16705f449c47adeedaa6ba9cd3eb3f25577e3504 1942 i2p_2.3.0-1~lunar+1.dsc
+Checksums-Sha256: 
+ 324aa19ac0c2bdeead8d7f6d72247dc691d3de5b2239a25ea2c11889e3ef5d7b 6778670 i2p_2.3.0.orig.tar.bz2
+ e56e134167be76c3ebb8ac8b9cf34b1ff8b9994c03dadafbbaf8579289c31d39 57016 i2p_2.3.0-1~lunar+1.debian.tar.xz
+ 2212c91854fad7a8ecffbf0f24ee24e64dc49e38a2e8aed8518dc411da94489d 1942 i2p_2.3.0-1~lunar+1.dsc
+Homepage: https://geti2p.net/
+Package-List: i2p deb net optional arch=all
+ i2p-doc deb doc optional arch=all
+ i2p-router deb net optional arch=all
+ libjbigi-jni deb java optional arch=any
+Vcs-Browser: https://salsa.debian.org/debian/i2p
+Vcs-Git: https://salsa.debian.org/debian/i2p.git
+

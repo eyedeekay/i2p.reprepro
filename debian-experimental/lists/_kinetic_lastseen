@@ -1,4 +1,7 @@
 Updates already processed for kinetic:
+Target kinetic|main|source
+Delete
+Index i2p-kinetic_kinetic_main_Sources :1:07e48c75c285ae1f99d0475bf1a46fce00c7b555 :2:cfa4bf0a0e65b9cece699387665905c2fa81628993f5c1b96adee375311b5cf4 ca072366bbce3eb00d70345c9c109446 1638
 Target kinetic|main|s390x
 Delete
 Index i2p-kinetic_kinetic_main_s390x_Packages :1:2e816e762240c83ea560bed64032023ec867a739 :2:6315597b106e5f4cb19237d36182d1ab5392f7478033a3ec57b298cb31276ef1 6874daa40eff29ee1f8c027519e1a513 2932

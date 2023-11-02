@@ -1,0 +1,71 @@
+Package: i2p
+Priority: optional
+Section: net
+Installed-Size: 405
+Maintainer: zzz <zzz@i2pmail.org>
+Architecture: all
+Version: 2.3.0-1~lunar+1
+Depends: debconf (>= 0.5) | debconf-2.0, i2p-router (= 2.3.0-1~lunar+1), adduser, apparmor, debconf, libjbigi-jni, lsb-base, service-wrapper, ucf (>= 0.28)
+Filename: pool/main/i/i2p/i2p_2.3.0-1~lunar+1_all.deb
+Size: 76614
+SHA256: f79822026b5c984bfbc1800e9ae2e362af57fc2b9284d9ff0ba01cb82a66e231
+SHA1: a115dce1f990b137190600f708531ba5808c6c4b
+MD5sum: 66d7e447d83589721b11f0a3ba5c99f4
+Description: Invisible Internet Project (I2P) - anonymous network
+ I2P is an anonymizing network, offering a simple layer that identity-sensitive
+ applications can use to securely communicate. All data is wrapped with several
+ layers of encryption, and the network is both distributed and dynamic, with no
+ trusted parties.
+ .
+ This package depends on the router, jbigi, the java service wrapper, and
+ includes support to run I2P as a daemon.
+Bugs: mailto:zzz@i2pmail.org
+
+Package: i2p-doc
+Source: i2p
+Priority: optional
+Section: doc
+Installed-Size: 79028
+Maintainer: zzz <zzz@i2pmail.org>
+Architecture: all
+Version: 2.3.0-1~lunar+1
+Suggests: i2p, default-jdk-doc
+Filename: pool/main/i/i2p/i2p-doc_2.3.0-1~lunar+1_all.deb
+Size: 3115232
+SHA256: d29567b1c67118bbd684cd7c0f2411482740a2d6adf7a5c1b94f4ef6baa7af73
+SHA1: 5cfad3ae19424272911f795b0944ec46c8a3ade7
+MD5sum: 85d158bb2187ea865abba257bb5d420c
+Description: Invisible Internet Project (I2P) - developer documentation
+ I2P is an anonymizing network, offering a simple layer that identity-sensitive
+ applications can use to securely communicate. All data is wrapped with several
+ layers of encryption, and the network is both distributed and dynamic, with no
+ trusted parties.
+ .
+ This package contains the Javadoc files.
+Bugs: mailto:zzz@i2pmail.org
+
+Package: i2p-router
+Source: i2p
+Priority: optional
+Section: net
+Installed-Size: 13542
+Maintainer: zzz <zzz@i2pmail.org>
+Architecture: all
+Version: 2.3.0-1~lunar+1
+Recommends: libjbigi-jni
+Replaces: i2p (<< 0.8.6-5)
+Suggests: apparmor, privoxy, syndie
+Depends: openjdk-18-jre-headless | openjdk-17-jre-headless | openjdk-11-jre-headless | default-jre-headless | java18-runtime-headless | java17-runtime-headless | java11-runtime-headless, geoip-database, gettext-base, libgetopt-java, libjson-simple-java (>= 2), libjson-simple-java (<< 3), libjetty9-java (>= 9.4), libjsp-api-java, libservlet-api-java, libtaglibs-standard-jstlel-java, libtomcat9-java, famfamfam-flag-png, sensible-utils
+Breaks: i2p (<< 0.8.6-5)
+Filename: pool/main/i/i2p/i2p-router_2.3.0-1~lunar+1_all.deb
+Size: 11669568
+SHA256: 2b49977a6d55c248cc479c75140354a4eae3996c3217d447a0d7043dab415c84
+SHA1: 6c251b8209289f87d22dfd3c95460a0c97fe8a1a
+MD5sum: 20e2075c75d50e32c6a9e9e8cf45256c
+Description: Invisible Internet Project (I2P) - Router
+ I2P is an anonymizing network, offering a simple layer that identity-sensitive
+ applications can use to securely communicate. All data is wrapped with several
+ layers of encryption, and the network is both distributed and dynamic, with no
+ trusted parties.
+Bugs: mailto:zzz@i2pmail.org
+

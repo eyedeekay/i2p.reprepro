@@ -3,7 +3,7 @@ Label: I2P
 Suite: oldstable
 Codename: buster
 Version: 10.0
-Date: Wed, 01 Nov 2023 23:48:30 UTC
+Date: Thu, 02 Nov 2023 01:17:59 UTC
 Architectures: i386 amd64 armhf arm64 ppc64el s390x
 Components: main rpi
 Description: I2P

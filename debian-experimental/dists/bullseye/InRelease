@@ -6,7 +6,7 @@ Label: I2P
 Suite: stable
 Codename: bullseye
 Version: 11.0
-Date: Wed, 01 Nov 2023 23:48:29 UTC
+Date: Thu, 02 Nov 2023 01:17:58 UTC
 Architectures: i386 amd64 armhf arm64 ppc64el s390x
 Components: main rpi
 Description: I2P
@@ -375,12 +375,12 @@ SHA256:
  d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058 14 rpi/Contents-s390x.bz2
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEcNIGBzi++AUjrK/311wDs5teFOEFAmVC480ACgkQ11wDs5te
-FOEvMgf6A5oF460uLkM8uobsYSW+MRY3mEUrNTNQltso36QBWYieu+fX8Bv6sSPO
-1x4oOFaB5Zjl6FsCiu45YbxmhyPgCJiPkSsziIbo0Da7cEoyJo0cuG17RKq/mUeB
-1dodxSDPOC5S8kmzoZnc7jXiVypsYiKs/CxLXpPzQX7V3TKWFxhm5FDONlK/Meqo
-VssbFSScIZVJFQNyYd2vYOApDntoHYUS600ZfZKI+uizmUiyNZBt+2qM6TxObFGB
-tamz48nk6k+t/0ysm7EgPXtn0ub5UBPfN+Gjyy/rgX8mowu19FPsP/cxtkbC1pD0
-eRQen4nCyU6qP16ajv+DYu/hAKBZXw==
-=tTOm
+iQEzBAEBCgAdFiEEcNIGBzi++AUjrK/311wDs5teFOEFAmVC+MYACgkQ11wDs5te
+FOEkAgf/SeKCSAGxNtTS+ybwN4vtVd2br6N9G7PzfE6vGIohrqx00kM6IVWfi3ul
+hZHrPZE4K+5jjHFrgfL0Cfzds44se/NPLO3ud+hIWMqKsrRm7k9Lc1CWjtEGMNNA
+L/K4nTwOsPVuFT+TPnnj9DRyiuTRcoNX9r6A2r+8KxNdk93upGjN6AHa0CVWE/RP
+dnJ+lfALXObKe/rcP+LWeFmgcd98bowlBxa77bjeTOhUO7cnUi4+RXr8KDNG/EjY
+bMWjB+hGqe9eQWqZmfZ+cE/nN9Mut8N/hcFUkUVHxWCgL2hZNPHbfyEUjRK7MClB
+Hg7ZEGSRut/ACT00V3wKkmvl7ki+Gw==
+=dY96
 -----END PGP SIGNATURE-----

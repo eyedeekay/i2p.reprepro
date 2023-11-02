@@ -6,7 +6,7 @@ Label: I2P
 Suite: oldstable
 Codename: buster
 Version: 10.0
-Date: Wed, 01 Nov 2023 23:48:30 UTC
+Date: Thu, 02 Nov 2023 01:17:59 UTC
 Architectures: i386 amd64 armhf arm64 ppc64el s390x
 Components: main rpi
 Description: I2P
@@ -375,12 +375,12 @@ SHA256:
  d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058 14 rpi/Contents-s390x.bz2
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEcNIGBzi++AUjrK/311wDs5teFOEFAmVC484ACgkQ11wDs5te
-FOESyQf+LEhV6KozFxBFHqIzcFlJtfOdoeHz68Um3gvJVN6K3AJ15u7EkEEPJQyZ
-xNFpdhixOfto56YszUDmuLz5TdbyXfuyZ/WuCpN2WoekuLIrorAu9P0nFoGM98UF
-DQcDmrDRxHw4Oi4QeHau0rzf0RwZsowROoNrF/4HihedD2HuLKx27GP+truhW00e
-hypY4GwPyybmqmHAyTV8eEJkQ31O0A4rBIrFVFazZqBiZZhJH/wTfbtiJ0c92zGW
-FzSHCuxAcC4I6j+V/yPMWW/JSnCUMQgc1uR6spbwWTGz+3vvTH0/CcoHOqPK9Mqo
-U9PSQ+g3MyQssDOd17tRwRUAUZp55Q==
-=wpnY
+iQEzBAEBCgAdFiEEcNIGBzi++AUjrK/311wDs5teFOEFAmVC+McACgkQ11wDs5te
+FOHEZQgAjUKJhaKFFiporNSWh7KQ6spOx3XUABQ29sm4AwsCubd9vSkrk+mIfNCk
+w7WHu4Fb0pOXyYZ8uk1e2W9XkLSQY15lxrOX0M5dcEc39zn/My4P8CeHA9ZDYGPp
+QAtiE+drHxyCod1hIWyOcO49Epnex/ALfV/pMT/VVZn9gzRYhCmyW/oRu/3737bC
+Akwfi5Ggdsip39q5tAVBXOaSiqbue3ae9vibR0cScMfuMdMwehhV4+k6G8xi8nBd
+wY9ZePHcioTr0i0bKHBjRav43Lq/zJ5fdf9pWj1mk3bg0159/WQH6rEhhsBckzPJ
+raFPJJfzH7yYA7F2c5i5PiDesauE6A==
+=Hgdu
 -----END PGP SIGNATURE-----

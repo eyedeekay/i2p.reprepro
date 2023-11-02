@@ -1,4 +1,7 @@
 Updates already processed for lunar:
+Target lunar|main|source
+Delete
+Index i2p-lunar_lunar_main_Sources :1:16f471d860723a434dee14edb38194d7a6456a6f :2:3d79093c7fda7a953e89a2d8defa8800736d31474e3a1f891209dd00da274b49 7260131e0fdab834adb8ba085d0c49f3 1674
 Target lunar|main|s390x
 Delete
 Index i2p-lunar_lunar_main_s390x_Packages :1:405ba9364f8233a5fa3d845808f6ae796bbd3ef9 :2:ea06d52c07bab46d2f2dc38bfe3594754c9fec17e2b674b434e8ff4a77a9846a e48aad630e16da2c80eede54feaecdc0 2947

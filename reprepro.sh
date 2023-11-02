@@ -11,5 +11,5 @@ reprepro -v -b ./debian_"$CUSTOM"reprepro --confdir ./debian/"$CUSTOM"conf --log
 chown -R 1000:1000 ./debian_"$CUSTOM"reprepro
 mkdir -p debian-experimental
 cp -rv ./debian_"$CUSTOM"reprepro/* debian-experimental
-cp index.html ubuntu/index.html
-cp *.css ubuntu
+cp index.html debian-experimental/index.html
+cp *.css debian-experimental

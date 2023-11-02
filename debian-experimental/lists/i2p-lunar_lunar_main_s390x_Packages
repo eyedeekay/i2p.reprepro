@@ -1,0 +1,75 @@
+Package: i2p
+Priority: optional
+Section: net
+Installed-Size: 405
+Maintainer: zzz <zzz@i2pmail.org>
+Architecture: all
+Version: 2.3.0-1~lunar+1
+Depends: debconf (>= 0.5) | debconf-2.0, i2p-router (= 2.3.0-1~lunar+1), adduser, apparmor, debconf, libjbigi-jni, lsb-base, service-wrapper, ucf (>= 0.28)
+Filename: pool/main/i/i2p/i2p_2.3.0-1~lunar+1_all.deb
+Size: 76614
+MD5sum: 66d7e447d83589721b11f0a3ba5c99f4
+SHA1: a115dce1f990b137190600f708531ba5808c6c4b
+SHA256: f79822026b5c984bfbc1800e9ae2e362af57fc2b9284d9ff0ba01cb82a66e231
+Description: Invisible Internet Project (I2P) - anonymous network
+Description-md5: af30cb5729ed02b68be39b03bbe331bf
+Bugs: mailto:zzz@i2pmail.org
+
+Package: i2p-doc
+Source: i2p
+Priority: optional
+Section: doc
+Installed-Size: 79028
+Maintainer: zzz <zzz@i2pmail.org>
+Architecture: all
+Version: 2.3.0-1~lunar+1
+Suggests: i2p, default-jdk-doc
+Filename: pool/main/i/i2p/i2p-doc_2.3.0-1~lunar+1_all.deb
+Size: 3115232
+MD5sum: 85d158bb2187ea865abba257bb5d420c
+SHA1: 5cfad3ae19424272911f795b0944ec46c8a3ade7
+SHA256: d29567b1c67118bbd684cd7c0f2411482740a2d6adf7a5c1b94f4ef6baa7af73
+Description: Invisible Internet Project (I2P) - developer documentation
+Description-md5: a38a3343330ab23e4039d143d8b57c15
+Bugs: mailto:zzz@i2pmail.org
+
+Package: i2p-router
+Source: i2p
+Priority: optional
+Section: net
+Installed-Size: 13542
+Maintainer: zzz <zzz@i2pmail.org>
+Architecture: all
+Version: 2.3.0-1~lunar+1
+Recommends: libjbigi-jni
+Replaces: i2p (<< 0.8.6-5)
+Suggests: apparmor, privoxy, syndie
+Depends: openjdk-18-jre-headless | openjdk-17-jre-headless | openjdk-11-jre-headless | default-jre-headless | java18-runtime-headless | java17-runtime-headless | java11-runtime-headless, geoip-database, gettext-base, libgetopt-java, libjson-simple-java (>= 2), libjson-simple-java (<< 3), libjetty9-java (>= 9.4), libjsp-api-java, libservlet-api-java, libtaglibs-standard-jstlel-java, libtomcat9-java, famfamfam-flag-png, sensible-utils
+Breaks: i2p (<< 0.8.6-5)
+Filename: pool/main/i/i2p/i2p-router_2.3.0-1~lunar+1_all.deb
+Size: 11669568
+MD5sum: 20e2075c75d50e32c6a9e9e8cf45256c
+SHA1: 6c251b8209289f87d22dfd3c95460a0c97fe8a1a
+SHA256: 2b49977a6d55c248cc479c75140354a4eae3996c3217d447a0d7043dab415c84
+Description: Invisible Internet Project (I2P) - Router
+Description-md5: b09b6523ae336da4c30a1d1deee14532
+Bugs: mailto:zzz@i2pmail.org
+
+Package: libjbigi-jni
+Source: i2p
+Priority: optional
+Section: java
+Installed-Size: 284
+Maintainer: zzz <zzz@i2pmail.org>
+Architecture: s390x
+Version: 2.3.0-1~lunar+1
+Depends: libc6 (>= 2.4), libgmp10 (>= 2:6.2.1+dfsg1), i2p-router
+Filename: pool/main/i/i2p/libjbigi-jni_2.3.0-1~lunar+1_s390x.deb
+Size: 264872
+MD5sum: 7893105d41f5f2cd69d22c4c90231be0
+SHA1: fa5138b83c3beef145b8bb5f9a789ea113696b20
+SHA256: 4469e76b9d11ee3f4948f3c56c6dc85f3a250f39064eb90cd1ee3db85448fea8
+Description: Invisible Internet Project (I2P) - libjbigi library
+Description-md5: 9abc006aa799702ff868098881332bad
+Bugs: mailto:zzz@i2pmail.org
+

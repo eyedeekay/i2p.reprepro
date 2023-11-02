@@ -1,7 +1,4 @@
 Updates already processed for bionic:
-Target bionic|main|source
-Delete
-Index i2p-bionic_bionic_main_Sources :1:c7b8141613dec3296b0b0e3c6870c21e5c33d58e :2:feda6afbf5bb126bd7922cde2ec34ee39ff97762ac81467e4059728546f5ac72 a8d4260b2f68ced9bc6f9b6612bf0dca 2772
 Target bionic|main|s390x
 Delete
 Index i2p-bionic_bionic_main_s390x_Packages :1:254faad86472c805c8f2d3abb2ac267c2b1d8d1b :2:c9602281b871d7ee19fe86925af170a3877f8c33f2c3ed542935994302900c23 3958304af5afba562536203e5391062a 3626

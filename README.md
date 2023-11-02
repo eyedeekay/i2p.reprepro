@@ -42,3 +42,13 @@ sudo cp -v i2p.gpg /usr/share/keyrings/i2pgit-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/i2pgit-archive-keyring.gpg] https://deb.i2pgit.org/ $(lsb_release -sc) main" \
   | sudo tee /etc/apt/sources.list.d/i2pgit.list
 ```
+
+I have a repository of packages signed with my keys as well:
+
+```
+gpg --keyserver keyserver.ubuntu.com --recv-keys D75C03B39B5E14E1
+gpg --export D75C03B39B5E14E1 > idk-i2p.gpg
+sudo cp -v idk-i2p.gpg /usr/share/keyrings/idk-i2pgit-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/idk-i2pgit-archive-keyring.gpg] https://deb.i2pgit.org/debian-experimental/ $(lsb_release -sc) main" \
+  | sudo tee /etc/apt/sources.list.d/idk-i2pgit.list
+```

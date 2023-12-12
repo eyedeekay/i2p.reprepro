@@ -115,44 +115,90 @@
       I2P Ubuntu Packages Mirror
     </h1>
     <p>
-      This mirror can be used with Debian and Ubuntu based Linux distributions.
-      It is not a replacement for
-      <code>
-        deb.i2p2.de
-      </code>
-      but it is kept up-to-date.
-      When used with a Debian host system,
-      <code>
-        apt
-      </code>
-      will complain about a
-      <code>
-        Conflicting Distribution
-      </code>
-      warning.
-      For example:
-      <code>
-        Conflicting distribution: https://deb.i2pgit.org sid InRelease (expected sid but got lunar)
-      </code>
-      This is normal and a result of using the Ubuntu repositories as a Debian source.
-      The packages themselves are identical and this is not harmful.
-      There is no i2p-keyring package in this repository(yet).
+      This setup is an automated tool for downloading, mirroring, and re-signing I2P Ubuntu packages for a Debian repository.
+      When you run it:
     </p>
-    <pre><code>gpg --keyserver keyserver.ubuntu.com --recv-keys AB9660B9EB2CC88B
-gpg --export AB9660B9EB2CC88B &gt; i2p.gpg
-sudo cp -v i2p.gpg /usr/share/keyrings/i2pgit-archive-keyring.gpg
-echo &quot;deb [signed-by=/usr/share/keyrings/i2pgit-archive-keyring.gpg] https://deb.i2pgit.org/ $(lsb_release -sc) main&quot; \
-  | sudo tee /etc/apt/sources.list.d/i2pgit.list
-</code></pre>
+    <ul>
+      <li>
+        First, it downloads and mirrors the packages from I2P&rsquo;s launchpad repository.
+      </li>
+      <li>
+        Second, it copies the Ubuntu packages to the matching Debian distribution.
+      </li>
+      <li>
+        Third, it signs the Debian packages.
+      </li>
+      <li>
+        Last, it copies them to the HTTP/S server where they can be provided to the users.
+      </li>
+    </ul>
     <p>
-      I have a repository of packages signed with my keys as well:
+      The result is a working repository which will work for both Debian and Ubuntu.
     </p>
-    <pre><code>gpg --keyserver keyserver.ubuntu.com --recv-keys D75C03B39B5E14E1
-gpg --export D75C03B39B5E14E1 &gt; idk-i2p.gpg
-sudo cp -v idk-i2p.gpg /usr/share/keyrings/idk-i2pgit-archive-keyring.gpg
-echo &quot;deb [signed-by=/usr/share/keyrings/idk-i2pgit-archive-keyring.gpg] https://deb.i2pgit.org/debian-experimental/ $(lsb_release -sc) main&quot; \
-  | sudo tee /etc/apt/sources.list.d/idk-i2pgit.list
-</code></pre>
+    <h2>
+      Usage:
+    </h2>
+    <p>
+      Run either:
+    </p>
+    <ul>
+      <li>
+        <code>
+          run.sh
+        </code>
+      </li>
+      <li>
+        <strong>
+          OR
+        </strong>
+      </li>
+      <li>
+        <code>
+          reprepro.sh
+        </code>
+      </li>
+    </ul>
+    <p>
+      in order to generate a complete, signed Debian repository by setting up the launchpad packages.
+      Use only one of thse options.
+      <code>
+        run.sh
+      </code>
+      uses Docker to generate the repository and leaves a copy of it
+      it in the
+      <code>
+        ./debian_reprepro
+      </code>
+      directory.
+      <code>
+        reprepro.sh
+      </code>
+      uses the host system directly and leaves a copy of
+      the repository in the
+      <code>
+        ./debian
+      </code>
+      .
+    </p>
+    <p>
+      If you only want to mirror Ubuntu packages, it is sufficient to run the
+      <code>
+        go-apt-mirror.sh
+      </code>
+      script, which
+      will leave a copy of the repository in the
+      <code>
+        ./ubuntu
+      </code>
+      directory.
+    </p>
+    <p>
+      When you&rsquo;re done, use
+      <code>
+        copy.sh
+      </code>
+      to copy the files into the web server directory.
+    </p>
     <div id="sourcecode">
       <span id="sourcehead">
         <strong>

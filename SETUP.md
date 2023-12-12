@@ -27,13 +27,15 @@ The primary advantage of doing things this way is that it requires no expertise,
 I2P Ubuntu Packages Mirror
 ==========================
 
-This mirror can be used with Debian and Ubuntu based Linux distributions.
-It is not a replacement for `deb.i2p2.de` but it is kept up-to-date.
-When used with a Debian host system, `apt` will complain about a `Conflicting Distribution` warning.
-For example: `Conflicting distribution: https://deb.i2pgit.org sid InRelease (expected sid but got lunar)`
-This is normal and a result of using the Ubuntu repositories as a Debian source.
-The packages themselves are identical and this is not harmful.
-There is no i2p-keyring package in this repository(yet).
+This setup is an automated tool for downloading, mirroring, and re-signing I2P Ubuntu packages for a Debian repository.
+When you run it:
+
+ - First, it downloads and mirrors the packages from I2P's launchpad repository.
+ - Second, it copies the Ubuntu packages to the matching Debian distribution.
+ - Third, it signs the Debian packages.
+ - Last, it copies them to the HTTP/S server where they can be provided to the users.
+
+The result is a working repository which will work for both Debian and Ubuntu.
 
 ```
 gpg --keyserver keyserver.ubuntu.com --recv-keys AB9660B9EB2CC88B

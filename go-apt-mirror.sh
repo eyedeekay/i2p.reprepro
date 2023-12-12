@@ -37,3 +37,5 @@ mkdir ubuntu
 cp -rv debian_mirror/mirror/* ubuntu
 cp index.html ubuntu/index.html
 cp *.css ubuntu
+sudo -u www-data mkdir -p "$DOCROOT/ubuntu"
+sudo -u www-data cp -rv ubuntu/* "$DOCROOT/ubuntu"

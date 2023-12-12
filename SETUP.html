@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <title>
+      I2P Packages for...
+    </title>
+    <meta name="author" content="eyedeekay" />
+    <meta name="description" content="i2p.reprepro" />
+    <meta name="keywords" content="trunk" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="showhider.css" />
+    <link rel="stylesheet" type="text/css" href="darklight.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="checkboxDarkLight">
+    <div class="container">
+    <div id="navbar">
+      <a href="#shownav">
+        Show navigation
+      </a>
+      <div id="shownav">
+        <div id="hidenav">
+          <ul>
+            <li>
+              <a href="..">
+                Up one level ^
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                index
+              </a>
+            </li>
+            <li>
+              <a href="SETUP.html">
+                SETUP
+              </a>
+            </li>
+            <li>
+              <a href="debian-experimental/index.html">
+                debian-experimental/index.html
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                index.html
+              </a>
+            </li>
+            <li>
+              <a href="ubuntu/index.html">
+                ubuntu/index.html
+              </a>
+            </li>
+          </ul>
+          <br>
+          <a href="#hidenav">
+            Hide Navigation
+          </a>
+        </div>
+      </div>
+    </div>
+    <a id="returnhome" href="/">
+      /
+    </a>
+    <h1>
+      Dockerized, keyless, Debian and Ubuntu-ready I2P Repository Mirror Generator
+    </h1>
+    <p>
+      This is a docker container which will set up an I2P apt repository using Ubuntu and
+      <code>
+        reprepro
+      </code>
+      .
+      It is set up to automatically copy the I2P packages from the corresponding Ubuntu version to the correct Debian version.
+      The output, which can be mounted as a docker volume using the internal path
+      <code>
+        /debian_reprepro
+      </code>
+      , is a fully working Debian and Ubuntu ready I2P repository. It does not require re-signing the I2P packages on the reprepro side, meaning it can be automatically scheduled, and it can run either within the docker container or on Ubuntu 22.04 or higher.
+    </p>
+    <h2>
+      Recommended Usage(Docker)
+    </h2>
+    <p>
+      This command:
+    </p>
+    <pre><code class="language-sh">./go-apt-mirror.sh
+</code></pre>
+    <p>
+      Will produce an
+      <code>
+        ubuntu
+      </code>
+      directory in the working directory.
+      This will contain a fully working
+      <code>
+        apt
+      </code>
+      repository filesystem containing I2P
+      <code>
+        .deb
+      </code>
+      packages.
+      They are ready to upload to a server.
+    </p>
+    <p>
+      The primary advantage of doing things this way is that it requires no expertise, whatsoever, and can be run with a
+      <code>
+        cron
+      </code>
+      job, like so:
+    </p>
+    <pre><code>0 5 * * 1 bash -c 'cd /home/user/i2p.reprepro/ &amp;&amp; ./go-apt-mirror.sh &amp;&amp; cp -rv ubuntu/* /var/www/html/'
+</code></pre>
+    <h1>
+      I2P Ubuntu Packages Mirror
+    </h1>
+    <p>
+      This mirror can be used with Debian and Ubuntu based Linux distributions.
+      It is not a replacement for
+      <code>
+        deb.i2p2.de
+      </code>
+      but it is kept up-to-date.
+      When used with a Debian host system,
+      <code>
+        apt
+      </code>
+      will complain about a
+      <code>
+        Conflicting Distribution
+      </code>
+      warning.
+      For example:
+      <code>
+        Conflicting distribution: https://deb.i2pgit.org sid InRelease (expected sid but got lunar)
+      </code>
+      This is normal and a result of using the Ubuntu repositories as a Debian source.
+      The packages themselves are identical and this is not harmful.
+      There is no i2p-keyring package in this repository(yet).
+    </p>
+    <pre><code>gpg --keyserver keyserver.ubuntu.com --recv-keys AB9660B9EB2CC88B
+gpg --export AB9660B9EB2CC88B &gt; i2p.gpg
+sudo cp -v i2p.gpg /usr/share/keyrings/i2pgit-archive-keyring.gpg
+echo &quot;deb [signed-by=/usr/share/keyrings/i2pgit-archive-keyring.gpg] https://deb.i2pgit.org/ $(lsb_release -sc) main&quot; \
+  | sudo tee /etc/apt/sources.list.d/i2pgit.list
+</code></pre>
+    <p>
+      I have a repository of packages signed with my keys as well:
+    </p>
+    <pre><code>gpg --keyserver keyserver.ubuntu.com --recv-keys D75C03B39B5E14E1
+gpg --export D75C03B39B5E14E1 &gt; idk-i2p.gpg
+sudo cp -v idk-i2p.gpg /usr/share/keyrings/idk-i2pgit-archive-keyring.gpg
+echo &quot;deb [signed-by=/usr/share/keyrings/idk-i2pgit-archive-keyring.gpg] https://deb.i2pgit.org/debian-experimental/ $(lsb_release -sc) main&quot; \
+  | sudo tee /etc/apt/sources.list.d/idk-i2pgit.list
+</code></pre>
+    <div id="sourcecode">
+      <span id="sourcehead">
+        <strong>
+          Get the source code:
+        </strong>
+      </span>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/i2p.reprepro.git">
+            Source Repository: (https://github.com/eyedeekay/i2p.reprepro.git)
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>
+      <a href="https://geti2p.net/">
+        <img class="i2plogo" src="i2plogo.png"></img>
+        I2P
+      </a>
+    </div>
+  </body>
+</html>

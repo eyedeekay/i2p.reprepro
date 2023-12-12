@@ -1,8 +1,6 @@
 <html>
   <head>
-    <title>
-      I2P Packages for...
-    </title>
+    <title></title>
     <meta name="author" content="eyedeekay" />
     <meta name="description" content="i2p.reprepro" />
     <meta name="keywords" content="trunk" />
@@ -61,400 +59,73 @@
     <a id="returnhome" href="/">
       /
     </a>
-    <h1 id="i2p-packages-for-debian-and-ubuntu style="text-align:center"">
-      I2P Packages for Debian and Ubuntu
-    </h1>
-    <h2>
-      Overview
-    </h2>
     <p>
-      This is the official repository for the
-      <a href="https://web.archive.org/web/20230530103143/https://geti2p.net/">
-        I2P
-        project
-      </a>
-      .
-      For instructions, see below, and more information is on
-      <a href="https://web.archive.org/web/20230530103143/https://geti2p.net/debian">
-        geti2p.net
-      </a>
-      .
+      ed; I2P 0.9.31 release added to all repos.
     </p>
     <p>
-      For Ubuntu, we recommend
-      <a href="https://web.archive.org/web/20230530103143/https://launchpad.net/~i2p-maintainers/+archive/ubuntu/i2p">
-        our
-        PPA
-      </a>
-      instead, and instructions are on
-      <a href="https://web.archive.org/web/20230530103143/https://geti2p.net/debian">
-        geti2p.net
-      </a>
-      .
+      <strong>
+        2017-05-04
+      </strong>
+      I2P 0.9.30 release added to all repos including stretch.
     </p>
     <p>
-      The signing key for this repo
-      <a href="https://web.archive.org/web/20230530103143/https://geti2p.net/_static/i2p-debian-repo.key.asc">
-        may be downloaded
-        here
+      <strong>
+        2017-04-15
+      </strong>
+      Stretch and stretch-testing repos added. Stretch-testing
+      now contains a 0.9.29-17-rc development build. Please report results in
+      IRC #i2p-dev.
+    </p>
+    <p>
+      <strong>
+        2017-01-06
+      </strong>
+      New
+      <a href="https://web.archive.org/web/20230910184541/https://github.com/i2p/i2p.i2p/blob/master/debian-alt/doc/dependencies.txt">
+        status notes on the i2p
+        package
+      </a>
+      now available.
+    </p>
+    <p>
+      <strong>
+        2016-11-04
+      </strong>
+      https now supported on host
+      <a href="https://web.archive.org/web/20230910184541/https://deb.i2p2.de/">
+        deb.i2p2.de
       </a>
       .
+      http is still available on host
+      <a href="https://web.archive.org/web/20230910184541/http://deb.i2p2.no/">
+        deb.i2p2.no
+      </a>
+      .
+      If https does not work, do: sudo apt-get install apt-transport-https
     </p>
-    <h2>
-      News
-    </h2>
-    <ul>
-      <li>
-        <strong>
-          2023-01-11
-        </strong>
-        I2P 2.1.0 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2022-12-02
-        </strong>
-        2.0.0-2ubuntu1 added to Focal+, Buster+, to fix a
-        minor issue with stray symlinks in / (Bionic not affected)
-      </li>
-      <li>
-        <strong>
-          2022-11-22
-        </strong>
-        I2P 2.0.0 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2022-11-04
-        </strong>
-        Lunar repo added.
-      </li>
-      <li>
-        <strong>
-          2022-08-23
-        </strong>
-        I2P 1.9.0 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2022-05-24
-        </strong>
-        I2P 1.8.0 release added to all repos; Kinetic repo
-        added.
-      </li>
-      <li>
-        <strong>
-          2022-03-03
-        </strong>
-        Fixed the architecture listings below for
-        libjbigi-jni.
-      </li>
-      <li>
-        <strong>
-          2022-02-22
-        </strong>
-        I2P 1.7.0 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2021-11-30
-        </strong>
-        I2P 1.6.1 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2021-10-23
-        </strong>
-        Jammy repo added.
-      </li>
-      <li>
-        <strong>
-          2021-09-10
-        </strong>
-        Repository signing key updated; Bookworm repo added;
-        stable/oldstable links updated.
-      </li>
-      <li>
-        <strong>
-          2021-08-30
-        </strong>
-        I2P 1.5.0 release added to all repos, sorry for the
-        delay.
-      </li>
-      <li>
-        <strong>
-          2021-05-19
-        </strong>
-        I2P 0.9.50 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2021-05-16
-        </strong>
-        Impish and Bullseye repos added.
-      </li>
-      <li>
-        <strong>
-          2021-02-17
-        </strong>
-        I2P 0.9.49 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2020-12-02
-        </strong>
-        I2P 0.9.48 release added to all supported repos;
-        Hirsute repo added.
-      </li>
-      <li>
-        <strong>
-          2020-10-17
-        </strong>
-        NOTE: I2P 0.9.47 was the last release for Xenial
-        (16.04). Xenial I2P packages are no longer supported.
-      </li>
-      <li>
-        <strong>
-          2020-08-25
-        </strong>
-        I2P 0.9.47 release added to all supported repos
-        (Buster+, Xenial+). Wheezy / Jessie / Stretch / Precise / Trusty I2P
-        packages are no longer supported. Java 8 is now required.
-      </li>
-      <li>
-        <strong>
-          2020-05-26
-        </strong>
-        I2P 0.9.46 release added to all repos; Groovy repo
-        added. NOTE: This is the last release for Wheezy / Jessie / Stretch
-        / Precise / Trusty. Java 8 will be required starting with 0.9.47.
-      </li>
-      <li>
-        <strong>
-          2020-02-25
-        </strong>
-        I2P 0.9.45 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2019-12-01
-        </strong>
-        I2P 0.9.44 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2019-10-22
-        </strong>
-        I2P 0.9.43 release added to all repos; Focal repo
-        added.
-      </li>
-      <li>
-        <strong>
-          2019-09-21
-        </strong>
-        Repository signing key updated
-      </li>
-      <li>
-        <strong>
-          2019-08-28
-        </strong>
-        I2P 0.9.42 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2019-07-24
-        </strong>
-        Updated stable, oldstable, newstable aliases, added
-        oldoldstable, testing, bullseye aliases.
-      </li>
-      <li>
-        <strong>
-          2019-07-03
-        </strong>
-        I2P 0.9.41 release added to all repos. Added arm64,
-        armhf, powerpc, ppc64el, and s390x architectures to all supported
-        repos.
-      </li>
-      <li>
-        <strong>
-          2019-05-08
-        </strong>
-        I2P 0.9.40 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2019-04-19
-        </strong>
-        I2P 0.9.39 in Bionic and Cosmic fixed for the change
-        from Jetty 9.2.22 to 9.4.15; Eoan repo added.
-      </li>
-      <li>
-        <strong>
-          2019-03-22
-        </strong>
-        I2P 0.9.39 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2019-01-26
-        </strong>
-        I2P 0.9.38 packages for Wheezy/Jessie/Precise/Trusty
-        fixed.
-      </li>
-      <li>
-        <strong>
-          2019-01-23
-        </strong>
-        Disco repo added; I2P 0.9.38 release added to all
-        repos.
-      </li>
-      <li>
-        <strong>
-          2018-10-05
-        </strong>
-        Buster repo added; I2P 0.9.37 release added to all
-        repos.
-      </li>
-      <li>
-        <strong>
-          2018-09-16
-        </strong>
-        Repository signing key updated
-      </li>
-      <li>
-        <strong>
-          2018-08-24
-        </strong>
-        I2P 0.9.36 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2018-06-27
-        </strong>
-        Cosmic repo added; I2P 0.9.35 release added to all
-        repos.
-      </li>
-      <li>
-        <strong>
-          2018-04-20
-        </strong>
-        I2P 0.9.34 is now in official Debian Sid and Ubuntu
-        Bionic repos. If you are running Debian Sid or Ubuntu Bionic or
-        later, you do not need to use this repo; simply install the i2p
-        package using your package manager.
-      </li>
-      <li>
-        <strong>
-          2018-04-11
-        </strong>
-        I2P 0.9.34 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2018-01-31
-        </strong>
-        Bionic repo added; I2P 0.9.33 release added to all
-        repos.
-      </li>
-      <li>
-        <strong>
-          2017-11-08
-        </strong>
-        I2P 0.9.32 release added to all repos.
-      </li>
-      <li>
-        <strong>
-          2017-09-21
-        </strong>
-        Repository signing key package fixed again for older
-        distros, sorry about that
-      </li>
-      <li>
-        <strong>
-          2017-09-20
-        </strong>
-        Repository signing key package fixed, sorry about
-        that
-      </li>
-      <li>
-        <strong>
-          2017-09-18
-        </strong>
-        Repository signing key updated
-      </li>
-      <li>
-        <strong>
-          2017-08-09
-        </strong>
-        Artful repo added; I2P 0.9.31 release added to all
-        repos.
-      </li>
-      <li>
-        <strong>
-          2017-05-04
-        </strong>
-        I2P 0.9.30 release added to all repos including
-        stretch.
-      </li>
-      <li>
-        <strong>
-          2017-04-15
-        </strong>
-        Stretch and stretch-testing repos added.
-        Stretch-testing now contains a 0.9.29-17-rc development build.
-        Please report results in IRC #i2p-dev.
-      </li>
-      <li>
-        <strong>
-          2017-01-06
-        </strong>
-        New
-        <a href="https://web.archive.org/web/20230530103143/https://github.com/i2p/i2p.i2p/blob/master/debian-alt/doc/dependencies.txt">
-          status notes on the i2p
-          package
-        </a>
-        now available.
-      </li>
-      <li>
-        <strong>
-          2016-11-04
-        </strong>
-        https now supported on host
-        <a href="https://web.archive.org/web/20230530103143/https://deb.i2p2.de/">
-          deb.i2p2.de
-        </a>
-        .
-        http is still available on host
-        <a href="https://web.archive.org/web/20230530103143/http://deb.i2p2.no/">
-          deb.i2p2.no
-        </a>
-        .
-        If https does not work, do: sudo apt-get install apt-transport-https
-      </li>
-      <li>
-        <strong>
-          2016-10-01
-        </strong>
-        Repository signing key updated
-      </li>
-      <li>
-        <strong>
-          2014-03-09
-        </strong>
-        Now serving
-        <a href="https://web.archive.org/web/20230530103143/http://www.anoncoin.net/">
-          Anoncoin
-        </a>
-        and packages for Ubuntu
-      </li>
-      <li>
-        <strong>
-          2013-10-10
-        </strong>
-        Repository started with hosting generously provided
-        by Meeh.
-      </li>
-    </ul>
+    <p>
+      <strong>
+        2016-10-01
+      </strong>
+      Repository signing key updated
+    </p>
+    <p>
+      <strong>
+        2014-03-09
+      </strong>
+      Now serving
+      <a href="https://web.archive.org/web/20230910184541/http://www.anoncoin.net/">
+        Anoncoin
+      </a>
+      and packages for Ubuntu
+    </p>
+    <p>
+      <strong>
+        2013-10-10
+      </strong>
+      Repository started with hosting generously provided by
+      Meeh.
+    </p>
     <h2>
       Notes
     </h2>
@@ -462,13 +133,13 @@
       Any necessary dependency packages will be found in either Debian\&rsquo;s
       repository or this one. Please report any problems with the I2P packages
       on the
-      <a href="https://web.archive.org/web/20230530103143/https://trac.i2p2.de/newticket?component=package/debian&amp;owner=killyourtv&amp;cc=killyourtv@mail.i2p">
+      <a href="https://web.archive.org/web/20230910184541/https://trac.i2p2.de/newticket?component=package/debian&amp;owner=killyourtv&amp;cc=killyourtv@mail.i2p">
         I2P Bug
         Tracker
       </a>
       .
       Bugs for Anoncoin should be reported on its
-      <a href="https://web.archive.org/web/20230530103143/https://github.com/anoncoin/anoncoin/issues">
+      <a href="https://web.archive.org/web/20230910184541/https://github.com/anoncoin/anoncoin/issues">
         Github project
         page
       </a>
@@ -584,7 +255,7 @@
 </code></pre>
     <p>
       Alternately, you may
-      <a href="https://web.archive.org/web/20230530103143/https://geti2p.net/_static/i2p-debian-repo.key.asc">
+      <a href="https://web.archive.org/web/20230910184541/https://geti2p.net/_static/i2p-debian-repo.key.asc">
         download the key
         here
       </a>
@@ -606,12 +277,12 @@
     </h2>
     <p>
       ::: package
-      [i2p]{.name} [(2.2.1-1ubuntu1[, [main]{.main}]{.section})]{.version} -
+      [i2p]{.name} [(2.3.0-1ubuntu1[, [main]{.main}]{.section})]{.version} -
       [Invisible Internet Project (I2P) - anonymous
       network]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p_2.2.1-1ubuntu1_all.deb">
+      <a href="pool/main/i/i2p/i2p_2.3.0-1ubuntu1_all.deb">
         all (70.9
         KB)
       </a>
@@ -638,12 +309,12 @@
     </blockquote>
     <p>
       ::: package
-      [i2p-doc]{.name} [(2.2.1-1ubuntu1[,
+      [i2p-doc]{.name} [(2.3.0-1ubuntu1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - developer documentation]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p-doc_2.2.1-1ubuntu1_all.deb">
+      <a href="pool/main/i/i2p/i2p-doc_2.3.0-1ubuntu1_all.deb">
         all (3.7
         MB)
       </a>
@@ -698,12 +369,12 @@
     </blockquote>
     <p>
       ::: package
-      [i2p-router]{.name} [(2.2.1-1ubuntu1[,
+      [i2p-router]{.name} [(2.3.0-1ubuntu1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - Router]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p-router_2.2.1-1ubuntu1_all.deb">
+      <a href="pool/main/i/i2p/i2p-router_2.3.0-1ubuntu1_all.deb">
         all (11.0
         MB)
       </a>
@@ -759,33 +430,33 @@
     </blockquote>
     <p>
       ::: package
-      [libjbigi-jni]{.name} [(2.2.1-1ubuntu1[,
+      [libjbigi-jni]{.name} [(2.3.0-1ubuntu1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - libjbigi library]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_amd64.deb">
-        amd64 (271.7
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_amd64.deb">
+        amd64 (272.1
         KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_arm64.deb">
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_arm64.deb">
         arm64
-        (271.0 KB)
+        (271.2 KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_armhf.deb">
-        armhf (270.6
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_armhf.deb">
+        armhf (270.9
         KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_ppc64el.deb">
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_ppc64el.deb">
         ppc64el
-        (271.5 KB)
+        (271.7 KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_s390x.deb">
-        s390x (270.8
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_s390x.deb">
+        s390x (271.1
         KB)
       </a>
       ]{.archs} |
@@ -815,12 +486,12 @@
     </h2>
     <p>
       ::: package
-      [i2p]{.name} [(2.2.1-1ubuntu1[, [main]{.main}]{.section})]{.version} -
+      [i2p]{.name} [(2.3.0-1ubuntu1[, [main]{.main}]{.section})]{.version} -
       [Invisible Internet Project (I2P) - anonymous
       network]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p_2.2.1-1ubuntu1_all.deb">
+      <a href="pool/main/i/i2p/i2p_2.3.0-1ubuntu1_all.deb">
         all (70.9
         KB)
       </a>
@@ -847,12 +518,12 @@
     </blockquote>
     <p>
       ::: package
-      [i2p-doc]{.name} [(2.2.1-1ubuntu1[,
+      [i2p-doc]{.name} [(2.3.0-1ubuntu1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - developer documentation]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p-doc_2.2.1-1ubuntu1_all.deb">
+      <a href="pool/main/i/i2p/i2p-doc_2.3.0-1ubuntu1_all.deb">
         all (3.7
         MB)
       </a>
@@ -907,12 +578,12 @@
     </blockquote>
     <p>
       ::: package
-      [i2p-router]{.name} [(2.2.1-1ubuntu1[,
+      [i2p-router]{.name} [(2.3.0-1ubuntu1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - Router]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p-router_2.2.1-1ubuntu1_all.deb">
+      <a href="pool/main/i/i2p/i2p-router_2.3.0-1ubuntu1_all.deb">
         all (11.0
         MB)
       </a>
@@ -993,33 +664,33 @@
     </blockquote>
     <p>
       ::: package
-      [libjbigi-jni]{.name} [(2.2.1-1ubuntu1[,
+      [libjbigi-jni]{.name} [(2.3.0-1ubuntu1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - libjbigi library]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_amd64.deb">
-        amd64 (271.7
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_amd64.deb">
+        amd64 (272.1
         KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_arm64.deb">
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_arm64.deb">
         arm64
-        (271.0 KB)
+        (271.2 KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_armhf.deb">
-        armhf (270.6
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_armhf.deb">
+        armhf (270.9
         KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_ppc64el.deb">
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_ppc64el.deb">
         ppc64el
-        (271.5 KB)
+        (271.7 KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1ubuntu1_s390x.deb">
-        s390x (270.8
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_s390x.deb">
+        s390x (271.1
         KB)
       </a>
       ]{.archs} |
@@ -2363,12 +2034,12 @@
     </h2>
     <p>
       ::: package
-      [i2p]{.name} [(2.2.1-1~lunar+1[, [main]{.main}]{.section})]{.version} -
+      [i2p]{.name} [(2.3.0-1~lunar+1[, [main]{.main}]{.section})]{.version} -
       [Invisible Internet Project (I2P) - anonymous
       network]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p_2.2.1-1~lunar+1_all.deb">
+      <a href="pool/main/i/i2p/i2p_2.3.0-1~lunar+1_all.deb">
         all (74.8
         KB)
       </a>
@@ -2388,12 +2059,12 @@
     </blockquote>
     <p>
       ::: package
-      [i2p-doc]{.name} [(2.2.1-1~lunar+1[,
+      [i2p-doc]{.name} [(2.3.0-1~lunar+1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - developer documentation]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p-doc_2.2.1-1~lunar+1_all.deb">
+      <a href="pool/main/i/i2p/i2p-doc_2.3.0-1~lunar+1_all.deb">
         all (3.0
         MB)
       </a>
@@ -2442,12 +2113,12 @@
     </blockquote>
     <p>
       ::: package
-      [i2p-router]{.name} [(2.2.1-1~lunar+1[,
+      [i2p-router]{.name} [(2.3.0-1~lunar+1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - Router]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/i2p-router_2.2.1-1~lunar+1_all.deb">
+      <a href="pool/main/i/i2p/i2p-router_2.3.0-1~lunar+1_all.deb">
         all (11.1
         MB)
       </a>
@@ -2700,19 +2371,19 @@
     </blockquote>
     <p>
       ::: package
-      [libjbigi-jni]{.name} [(2.2.1-1~lunar+1[,
+      [libjbigi-jni]{.name} [(2.3.0-1~lunar+1[,
       [main]{.main}]{.section})]{.version} - [Invisible Internet Project
       (I2P) - libjbigi library]{.short_description}
       <br />
       [Binary for arch [
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1~lunar+1_amd64.deb">
-        amd64 (259.3
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1~lunar+1_amd64.deb">
+        amd64 (259.6
         KB)
       </a>
       ,
-      <a href="pool/main/i/i2p/libjbigi-jni_2.2.1-1~lunar+1_armhf.deb">
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1~lunar+1_armhf.deb">
         armhf
-        (258.1
+        (258.3
         KB)
       </a>
       ]{.archs} |

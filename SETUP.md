@@ -37,20 +37,21 @@ When you run it:
 
 The result is a working repository which will work for both Debian and Ubuntu.
 
-```
-gpg --keyserver keyserver.ubuntu.com --recv-keys AB9660B9EB2CC88B
-gpg --export AB9660B9EB2CC88B > i2p.gpg
-sudo cp -v i2p.gpg /usr/share/keyrings/i2pgit-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/i2pgit-archive-keyring.gpg] https://deb.i2pgit.org/ $(lsb_release -sc) main" \
-  | sudo tee /etc/apt/sources.list.d/i2pgit.list
-```
+Usage:
+------
 
-I have a repository of packages signed with my keys as well:
+Run either:
 
-```
-gpg --keyserver keyserver.ubuntu.com --recv-keys D75C03B39B5E14E1
-gpg --export D75C03B39B5E14E1 > idk-i2p.gpg
-sudo cp -v idk-i2p.gpg /usr/share/keyrings/idk-i2pgit-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/idk-i2pgit-archive-keyring.gpg] https://deb.i2pgit.org/debian-experimental/ $(lsb_release -sc) main" \
-  | sudo tee /etc/apt/sources.list.d/idk-i2pgit.list
-```
+ - `run.sh`
+ - **OR**
+ - `reprepro.sh`
+
+in order to generate a complete, signed Debian repository by setting up the launchpad packages.
+Use only one of thse options. `run.sh` uses Docker to generate the repository and leaves a copy of it
+it in the `./debian_reprepro` directory. `reprepro.sh` uses the host system directly and leaves a copy of
+the repository in the `./debian`.
+
+If you only want to mirror Ubuntu packages, it is sufficient to run the `go-apt-mirror.sh` script, which
+will leave a copy of the repository in the `./ubuntu` directory.
+
+When you're done, use `copy.sh` to copy the files into the web server directory.

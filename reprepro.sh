@@ -14,5 +14,3 @@ mkdir -p debian
 cp -rv ./debian_"$CUSTOM"reprepro/* debian
 cp index.html debian/index.html
 cp *.css debian
-sudo -u www-data mkdir -p "$DOCROOT/debian"
-sudo -u www-data cp -rv debian/* "$DOCROOT/debian"

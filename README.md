@@ -3,17 +3,17 @@
 ## Overview
 
 This is the official repository for the [I2P
-project](https://web.archive.org/web/20230910184541/https://geti2p.net/).
+project](https://geti2p.net/).
 For instructions, see below, and more information is on
-[geti2p.net](https://web.archive.org/web/20230910184541/https://geti2p.net/debian).
+[geti2p.net](https://geti2p.net/debian).
 
 For Ubuntu, we recommend [our
-PPA](https://web.archive.org/web/20230910184541/https://launchpad.net/~i2p-maintainers/+archive/ubuntu/i2p)
+PPA](https://launchpad.net/~i2p-maintainers/+archive/ubuntu/i2p)
 instead, and instructions are on
-[geti2p.net](https://web.archive.org/web/20230910184541/https://geti2p.net/debian).
+[geti2p.net](https://geti2p.net/debian).
 
 The signing key for this repo [may be downloaded
-here](https://web.archive.org/web/20230910184541/https://geti2p.net/_static/i2p-debian-repo.key.asc).
+here](https://geti2p.net/_static/i2p-debian-repo.key.asc).
 
 ## News
 
@@ -96,16 +96,16 @@ here](https://web.archive.org/web/20230910184541/https://geti2p.net/_static/i2p-
     Stretch-testing now contains a 0.9.29-17-rc development build.
     Please report results in IRC #i2p-dev.
 -   **2017-01-06** New [status notes on the i2p
-    package](https://web.archive.org/web/20230910184541/https://github.com/i2p/i2p.i2p/blob/master/debian-alt/doc/dependencies.txt)
+    package](https://github.com/i2p/i2p.i2p/blob/master/debian-alt/doc/dependencies.txt)
     now available.
 -   **2016-11-04** https now supported on host
-    [deb.i2p2.de](https://web.archive.org/web/20230910184541/https://deb.i2p2.de/).
+    [deb.i2p2.de](https://deb.i2p2.de/).
     http is still available on host
-    [deb.i2p2.no](https://web.archive.org/web/20230910184541/http://deb.i2p2.no/).
+    [deb.i2p2.no](http://deb.i2p2.no/).
     If https does not work, do: sudo apt-get install apt-transport-https
 -   **2016-10-01** Repository signing key updated
 -   **2014-03-09** Now serving
-    [Anoncoin](https://web.archive.org/web/20230910184541/http://www.anoncoin.net/)
+    [Anoncoin](http://www.anoncoin.net/)
     and packages for Ubuntu
 -   **2013-10-10** Repository started with hosting generously provided
     by Meeh.
@@ -115,9 +115,9 @@ here](https://web.archive.org/web/20230910184541/https://geti2p.net/_static/i2p-
 Any necessary dependency packages will be found in either Debian\'s
 repository or this one. Please report any problems with the I2P packages
 on the [I2P Bug
-Tracker](https://web.archive.org/web/20230910184541/https://trac.i2p2.de/newticket?component=package/debian&owner=killyourtv&cc=killyourtv@mail.i2p).
+Tracker](https://trac.i2p2.de/newticket?component=package/debian&owner=killyourtv&cc=killyourtv@mail.i2p).
 Bugs for Anoncoin should be reported on its [Github project
-page](https://web.archive.org/web/20230910184541/https://github.com/anoncoin/anoncoin/issues).
+page](https://github.com/anoncoin/anoncoin/issues).
 
 ### Repository Information
 
@@ -126,99 +126,99 @@ Add lines like the following to `/etc/apt/sources.list.d/i2p.list`.
 For Debian Wheezy (EOL May 2018):
 
 ``` listing
-    deb https://deb.i2p2.de/ wheezy main
-    deb-src https://deb.i2p2.de/ wheezy main
+    deb https://deb.i2pgit.org/ wheezy main
+    deb-src https://deb.i2pgit.org/ wheezy main
 ```
 
 For Debian Jessie (EOL June 2020):
 
 ``` listing
-    deb https://deb.i2p2.de/ jessie main
-    deb-src https://deb.i2p2.de/ jessie main
+    deb https://deb.i2pgit.org/ jessie main
+    deb-src https://deb.i2pgit.org/ jessie main
 ```
 
 For Debian Stretch (oldoldstable):
 
 ``` listing
-    deb https://deb.i2p2.de/ stretch main
-    deb-src https://deb.i2p2.de/ stretch main
+    deb https://deb.i2pgit.org/ stretch main
+    deb-src https://deb.i2pgit.org/ stretch main
 ```
 
 For Debian Buster (oldstable):
 
 ``` listing
-    deb https://deb.i2p2.de/ buster main
-    deb-src https://deb.i2p2.de/ buster main
+    deb https://deb.i2pgit.org/ buster main
+    deb-src https://deb.i2pgit.org/ buster main
 ```
 
 For Debian Bullseye (stable):
 
 ``` listing
-    deb https://deb.i2p2.de/ bullseye main
-    deb-src https://deb.i2p2.de/ bullseye main
+    deb https://deb.i2pgit.org/ bullseye main
+    deb-src https://deb.i2pgit.org/ bullseye main
 ```
 
 For Debian Bookworm (newstable):
 
 ``` listing
-    deb https://deb.i2p2.de/ bookworm main
-    deb-src https://deb.i2p2.de/ bookworm main
+    deb https://deb.i2pgit.org/ bookworm main
+    deb-src https://deb.i2pgit.org/ bookworm main
 ```
 
 For Debian testing or Sid (unstable):
 
 ``` listing
-    deb https://deb.i2p2.de/ unstable main
-    deb-src https://deb.i2p2.de/ unstable main
+    deb https://deb.i2pgit.org/ unstable main
+    deb-src https://deb.i2pgit.org/ unstable main
 ```
 
 For Ubuntu Precise (LTS 12.04):
 
 ``` listing
-    deb https://deb.i2p2.de/ precise main
-    deb-src https://deb.i2p2.de/ precise main
+    deb https://deb.i2pgit.org/ precise main
+    deb-src https://deb.i2pgit.org/ precise main
 ```
 
 For Ubuntu Trusty (LTS 14.04):
 
 ``` listing
-    deb https://deb.i2p2.de/ trusty main
-    deb-src https://deb.i2p2.de/ trusty main
+    deb https://deb.i2pgit.org/ trusty main
+    deb-src https://deb.i2pgit.org/ trusty main
 ```
 
 For Ubuntu Xenial (LTS 16.04):
 
 ``` listing
-    deb https://deb.i2p2.de/ xenial main
-    deb-src https://deb.i2p2.de/ xenial main
+    deb https://deb.i2pgit.org/ xenial main
+    deb-src https://deb.i2pgit.org/ xenial main
 ```
 
 For Ubuntu Bionic (LTS 18.04):
 
 ``` listing
-    deb https://deb.i2p2.de/ bionic main
-    deb-src https://deb.i2p2.de/ bionic main
+    deb https://deb.i2pgit.org/ bionic main
+    deb-src https://deb.i2pgit.org/ bionic main
 ```
 
 For Ubuntu Focal (LTS 20.04):
 
 ``` listing
-    deb https://deb.i2p2.de/ focal main
-    deb-src https://deb.i2p2.de/ focal main
+    deb https://deb.i2pgit.org/ focal main
+    deb-src https://deb.i2pgit.org/ focal main
 ```
 
 For Ubuntu Jammy (LTS 22.04):
 
 ``` listing
-    deb https://deb.i2p2.de/ jammy main
-    deb-src https://deb.i2p2.de/ jammy main
+    deb https://deb.i2pgit.org/ jammy main
+    deb-src https://deb.i2pgit.org/ jammy main
 ```
 
 For Ubuntu Lunar (22.10):
 
 ``` listing
-    deb https://deb.i2p2.de/ lunar main
-    deb-src https://deb.i2p2.de/ lunar main
+    deb https://deb.i2pgit.org/ lunar main
+    deb-src https://deb.i2pgit.org/ lunar main
 ```
 
 ### Updating the package list
@@ -237,7 +237,7 @@ this by running the following:
 ```
 
 Alternately, you may [download the key
-here](https://web.archive.org/web/20230910184541/https://geti2p.net/_static/i2p-debian-repo.key.asc)
+here](https://geti2p.net/_static/i2p-debian-repo.key.asc)
 and then do:
 
 ``` listing

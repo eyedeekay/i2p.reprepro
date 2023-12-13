@@ -67,55 +67,21 @@
       /
     </a>
     <h1>
-      Dockerized, keyless, Debian and Ubuntu-ready I2P Repository Mirror Generator
+      Debian and Ubuntu-ready I2P Repository Mirror Generator(Optionally dockerized, optionally keyless)
     </h1>
     <p>
-      This is a docker container which will set up an I2P apt repository using Ubuntu and
+      This is a script which will set up an I2P apt repository using Ubuntu and
       <code>
         reprepro
       </code>
-      .
+      (and optionally docker).
       It is set up to automatically copy the I2P packages from the corresponding Ubuntu version to the correct Debian version.
       The output, which can be mounted as a docker volume using the internal path
       <code>
         /debian_reprepro
       </code>
-      , is a fully working Debian and Ubuntu ready I2P repository. It does not require re-signing the I2P packages on the reprepro side, meaning it can be automatically scheduled, and it can run either within the docker container or on Ubuntu 22.04 or higher.
+      , is a fully working Debian and Ubuntu ready I2P repository. It does not require re-signing the I2P packages on the reprepro side(Although this results in a warning from dpkg), meaning it can be automatically scheduled, and it can run either within the docker container or on Ubuntu 22.04 or higher.
     </p>
-    <h2>
-      Recommended Usage(Docker)
-    </h2>
-    <p>
-      This command:
-    </p>
-    <pre><code class="language-sh">./go-apt-mirror.sh
-</code></pre>
-    <p>
-      Will produce an
-      <code>
-        ubuntu
-      </code>
-      directory in the working directory.
-      This will contain a fully working
-      <code>
-        apt
-      </code>
-      repository filesystem containing I2P
-      <code>
-        .deb
-      </code>
-      packages.
-      They are ready to upload to a server.
-    </p>
-    <p>
-      The primary advantage of doing things this way is that it requires no expertise, whatsoever, and can be run with a
-      <code>
-        cron
-      </code>
-      job, like so:
-    </p>
-    <pre><code>0 5 * * 1 bash -c 'cd /home/user/i2p.reprepro/ &amp;&amp; ./go-apt-mirror.sh &amp;&amp; cp -rv ubuntu/* /var/www/html/'
-</code></pre>
     <h1>
       I2P Ubuntu Packages Mirror
     </h1>
@@ -248,6 +214,37 @@
       </code>
       to copy the files into the web server directory.
     </p>
+    <p>
+      This command:
+    </p>
+    <pre><code class="language-sh">./go-apt-mirror.sh
+</code></pre>
+    <p>
+      Will produce an
+      <code>
+        ubuntu
+      </code>
+      directory in the working directory.
+      This will contain a fully working
+      <code>
+        apt
+      </code>
+      repository filesystem containing I2P
+      <code>
+        .deb
+      </code>
+      packages.
+      They are ready to upload to a server.
+    </p>
+    <p>
+      The primary advantage of doing things this way is that it requires no expertise, whatsoever, and can be run with a
+      <code>
+        cron
+      </code>
+      job, like so:
+    </p>
+    <pre><code>0 5 * * 1 bash -c 'cd /home/user/i2p.reprepro/ &amp;&amp; ./go-apt-mirror.sh &amp;&amp; cp -rv ubuntu/* /var/www/html/'
+</code></pre>
     <div id="sourcecode">
       <span id="sourcehead">
         <strong>

@@ -1,1731 +1,2983 @@
-<h1 style="text-align:center"
-id="i2p-packages-for-debian-and-ubuntu">I2P Packages for Debian and
-Ubuntu</h1>
-<h2 id="overview">Overview</h2>
-<p>This is the official repository for the <a
-href="https://geti2p.net/">I2P project</a>. For instructions, see below,
-and more information is on <a
-href="https://geti2p.net/debian">geti2p.net</a>.</p>
-<p>For Ubuntu, we recommend <a
-href="https://launchpad.net/~i2p-maintainers/+archive/ubuntu/i2p">our
-PPA</a> instead, and instructions are on <a
-href="https://geti2p.net/debian">geti2p.net</a>.</p>
-<p>The signing key for this repo <a
-href="https://geti2p.net/_static/i2p-debian-repo.key.asc">may be
-downloaded here</a>.</p>
-<h2 id="news">News</h2>
-<ul>
-<li><strong>2023-07-02</strong> I2P 2.3.0 release added to all
-repos.</li>
-<li><strong>2023-04-16</strong> I2P 2.2.1 release added to all
-repos.</li>
-<li><strong>2023-03-17</strong> I2P 2.2.0 release added to all
-repos.</li>
-<li><strong>2023-01-11</strong> I2P 2.1.0 release added to all
-repos.</li>
-<li><strong>2022-12-02</strong> 2.0.0-2ubuntu1 added to Focal+, Buster+,
-to fix a minor issue with stray symlinks in / (Bionic not affected)</li>
-<li><strong>2022-11-22</strong> I2P 2.0.0 release added to all
-repos.</li>
-<li><strong>2022-11-04</strong> Lunar repo added.</li>
-<li><strong>2022-08-23</strong> I2P 1.9.0 release added to all
-repos.</li>
-<li><strong>2022-05-24</strong> I2P 1.8.0 release added to all repos;
-Kinetic repo added.</li>
-<li><strong>2022-03-03</strong> Fixed the architecture listings below
-for libjbigi-jni.</li>
-<li><strong>2022-02-22</strong> I2P 1.7.0 release added to all
-repos.</li>
-<li><strong>2021-11-30</strong> I2P 1.6.1 release added to all
-repos.</li>
-<li><strong>2021-10-23</strong> Jammy repo added.</li>
-<li><strong>2021-09-10</strong> Repository signing key updated; Bookworm
-repo added; stable/oldstable links updated.</li>
-<li><strong>2021-08-30</strong> I2P 1.5.0 release added to all repos,
-sorry for the delay.</li>
-<li><strong>2021-05-19</strong> I2P 0.9.50 release added to all
-repos.</li>
-<li><strong>2021-05-16</strong> Impish and Bullseye repos added.</li>
-<li><strong>2021-02-17</strong> I2P 0.9.49 release added to all
-repos.</li>
-<li><strong>2020-12-02</strong> I2P 0.9.48 release added to all
-supported repos; Hirsute repo added.</li>
-<li><strong>2020-10-17</strong> NOTE: I2P 0.9.47 was the last release
-for Xenial (16.04). Xenial I2P packages are no longer supported.</li>
-<li><strong>2020-08-25</strong> I2P 0.9.47 release added to all
-supported repos (Buster+, Xenial+). Wheezy / Jessie / Stretch / Precise
-/ Trusty I2P packages are no longer supported. Java 8 is now
-required.</li>
-<li><strong>2020-05-26</strong> I2P 0.9.46 release added to all repos;
-Groovy repo added. NOTE: This is the last release for Wheezy / Jessie /
-Stretch / Precise / Trusty. Java 8 will be required starting with
-0.9.47.</li>
-<li><strong>2020-02-25</strong> I2P 0.9.45 release added to all
-repos.</li>
-<li><strong>2019-12-01</strong> I2P 0.9.44 release added to all
-repos.</li>
-<li><strong>2019-10-22</strong> I2P 0.9.43 release added to all repos;
-Focal repo added.</li>
-<li><strong>2019-09-21</strong> Repository signing key updated</li>
-<li><strong>2019-08-28</strong> I2P 0.9.42 release added to all
-repos.</li>
-<li><strong>2019-07-24</strong> Updated stable, oldstable, newstable
-aliases, added oldoldstable, testing, bullseye aliases.</li>
-<li><strong>2019-07-03</strong> I2P 0.9.41 release added to all repos.
-Added arm64, armhf, powerpc, ppc64el, and s390x architectures to all
-supported repos.</li>
-<li><strong>2019-05-08</strong> I2P 0.9.40 release added to all
-repos.</li>
-<li><strong>2019-04-19</strong> I2P 0.9.39 in Bionic and Cosmic fixed
-for the change from Jetty 9.2.22 to 9.4.15; Eoan repo added.</li>
-<li><strong>2019-03-22</strong> I2P 0.9.39 release added to all
-repos.</li>
-<li><strong>2019-01-26</strong> I2P 0.9.38 packages for
-Wheezy/Jessie/Precise/Trusty fixed.</li>
-<li><strong>2019-01-23</strong> Disco repo added; I2P 0.9.38 release
-added to all repos.</li>
-<li><strong>2018-10-05</strong> Buster repo added; I2P 0.9.37 release
-added to all repos.</li>
-<li><strong>2018-09-16</strong> Repository signing key updated</li>
-<li><strong>2018-08-24</strong> I2P 0.9.36 release added to all
-repos.</li>
-<li><strong>2018-06-27</strong> Cosmic repo added; I2P 0.9.35 release
-added to all repos.</li>
-<li><strong>2018-04-20</strong> I2P 0.9.34 is now in official Debian Sid
-and Ubuntu Bionic repos. If you are running Debian Sid or Ubuntu Bionic
-or later, you do not need to use this repo; simply install the i2p
-package using your package manager.</li>
-<li><strong>2018-04-11</strong> I2P 0.9.34 release added to all
-repos.</li>
-<li><strong>2018-01-31</strong> Bionic repo added; I2P 0.9.33 release
-added to all repos.</li>
-<li><strong>2017-11-08</strong> I2P 0.9.32 release added to all
-repos.</li>
-<li><strong>2017-09-21</strong> Repository signing key package fixed
-again for older distros, sorry about that</li>
-<li><strong>2017-09-20</strong> Repository signing key package fixed,
-sorry about that</li>
-<li><strong>2017-09-18</strong> Repository signing key updated</li>
-<li><strong>2017-08-09</strong> Artful repo added; I2P 0.9.31 release
-added to all repos.</li>
-<li><strong>2017-05-04</strong> I2P 0.9.30 release added to all repos
-including stretch.</li>
-<li><strong>2017-04-15</strong> Stretch and stretch-testing repos added.
-Stretch-testing now contains a 0.9.29-17-rc development build. Please
-report results in IRC #i2p-dev.</li>
-<li><strong>2017-01-06</strong> New <a
-href="https://github.com/i2p/i2p.i2p/blob/master/debian-alt/doc/dependencies.txt">status
-notes on the i2p package</a> now available.</li>
-<li><strong>2016-11-04</strong> https now supported on host <a
-href="https://deb.i2p2.de/">deb.i2p2.de</a>. http is still available on
-host <a href="http://deb.i2p2.no/">deb.i2p2.no</a>. If https does not
-work, do: sudo apt-get install apt-transport-https</li>
-<li><strong>2016-10-01</strong> Repository signing key updated</li>
-<li><strong>2014-03-09</strong> Now serving <a
-href="http://www.anoncoin.net/">Anoncoin</a> and packages for
-Ubuntu</li>
-<li><strong>2013-10-10</strong> Repository started with hosting
-generously provided by Meeh.</li>
-</ul>
-<h2 id="notes">Notes</h2>
-<p>Any necessary dependency packages will be found in either Debian's
-repository or this one. Please report any problems with the I2P packages
-on the <a
-href="https://trac.i2p2.de/newticket?component=package/debian&amp;owner=killyourtv&amp;cc=killyourtv@mail.i2p">I2P
-Bug Tracker</a>. Bugs for Anoncoin should be reported on its <a
-href="https://github.com/anoncoin/anoncoin/issues">Github project
-page</a>.</p>
-<h3 id="repository-information">Repository Information</h3>
-<p>Add lines like the following to
-<code>/etc/apt/sources.list.d/i2p.list</code>.</p>
-<p>For Debian Wheezy (EOL May 2018):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ wheezy main
-    deb-src https://deb.i2pgit.org/ wheezy main</code></pre>
-<p>For Debian Jessie (EOL June 2020):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ jessie main
-    deb-src https://deb.i2pgit.org/ jessie main</code></pre>
-<p>For Debian Stretch (oldoldstable):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ stretch main
-    deb-src https://deb.i2pgit.org/ stretch main</code></pre>
-<p>For Debian Buster (oldstable):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ buster main
-    deb-src https://deb.i2pgit.org/ buster main</code></pre>
-<p>For Debian Bullseye (stable):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ bullseye main
-    deb-src https://deb.i2pgit.org/ bullseye main</code></pre>
-<p>For Debian Bookworm (newstable):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ bookworm main
-    deb-src https://deb.i2pgit.org/ bookworm main</code></pre>
-<p>For Debian testing or Sid (unstable):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ unstable main
-    deb-src https://deb.i2pgit.org/ unstable main</code></pre>
-<p>For Ubuntu Precise (LTS 12.04):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ precise main
-    deb-src https://deb.i2pgit.org/ precise main</code></pre>
-<p>For Ubuntu Trusty (LTS 14.04):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ trusty main
-    deb-src https://deb.i2pgit.org/ trusty main</code></pre>
-<p>For Ubuntu Xenial (LTS 16.04):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ xenial main
-    deb-src https://deb.i2pgit.org/ xenial main</code></pre>
-<p>For Ubuntu Bionic (LTS 18.04):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ bionic main
-    deb-src https://deb.i2pgit.org/ bionic main</code></pre>
-<p>For Ubuntu Focal (LTS 20.04):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ focal main
-    deb-src https://deb.i2pgit.org/ focal main</code></pre>
-<p>For Ubuntu Jammy (LTS 22.04):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ jammy main
-    deb-src https://deb.i2pgit.org/ jammy main</code></pre>
-<p>For Ubuntu Lunar (22.10):</p>
-<pre class="listing"><code>    deb https://deb.i2pgit.org/ lunar main
-    deb-src https://deb.i2pgit.org/ lunar main</code></pre>
-<h3 id="updating-the-package-list">Updating the package list</h3>
-<p>After adding the repo to apt, update the package list with</p>
-<pre class="listing"><code>    sudo apt-get update</code></pre>
-<p>APT will likely complain about a missing key. If it does you can
-resolve this by running the following:</p>
-<pre class="listing"><code>    sudo apt-get install i2p-keyring &amp;&amp; apt-get update</code></pre>
-<p>Alternately, you may <a
-href="https://geti2p.net/_static/i2p-debian-repo.key.asc">download the
-key here</a> and then do:</p>
-<pre class="listing"><code>    sudo apt-key add i2p-debian-repo.key.asc</code></pre>
-<h2 id="current-contents">Current Contents</h2>
-<p>The current contents of the repo are listed below. This information
-is automatically generated.</p>
-<hr />
-<hr />
-<h2 style="text-align:center" id="bullseye">Packages in Bullseye (Debian
-stable)</h2>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(2.3.0-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_2.3.0-1ubuntu1_all.deb">all (70.9
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package depends on the router, jbigi, the java service wrapper, and
-includes support to run I2P as a daemon.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(2.3.0-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_2.3.0-1ubuntu1_all.deb">all (3.7
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package contains the Javadoc files.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-keyring</span> <span
-class="version">(2021.09.10<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of the I2P package
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">all (14.7
-KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p-keyring/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing I2P's
-repositories. Upon installation of this package, your APT trusted
-keyring will updated with these keys. Upon removal of this package, the
-keys provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(2.3.0-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_2.3.0-1ubuntu1_all.deb">all (11.0
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(0.9.46-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46-1ubuntu1_i386.deb">i386 (5.3
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the libjbigi JNI library (and on x86 platforms,
-jcpuid).<br />
-<br />
-libjbigi is a math library that is part of the I2P installation. Use of
-this library greatly enhances the efficiency of cryptographic
-algorithms, such as the ones used by I2P. You can expect to see a 5-7x
-speed improvement on certain tasks, such as elGamal
-encryption/decryption.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(2.3.0-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_amd64.deb">amd64
-(272.1 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_arm64.deb">arm64
-(271.2 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_armhf.deb">armhf
-(270.9 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_ppc64el.deb">ppc64el
-(271.7 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_s390x.deb">s390x
-(271.1 KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the libjbigi JNI library (and on x86 platforms,
-jcpuid).<br />
-<br />
-libjbigi is a math library that is part of the I2P installation. Use of
-this library greatly enhances the efficiency of cryptographic
-algorithms, such as the ones used by I2P. You can expect to see a 5-7x
-speed improvement on certain tasks, such as elGamal
-encryption/decryption.</p>
-</blockquote>
-</div>
-<h2 style="text-align:center" id="buster">Packages in Buster (Debian old
-stable)</h2>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(2.3.0-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_2.3.0-1ubuntu1_all.deb">all (70.9
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package depends on the router, jbigi, the java service wrapper, and
-includes support to run I2P as a daemon.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(2.3.0-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_2.3.0-1ubuntu1_all.deb">all (3.7
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package contains the Javadoc files.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-keyring</span> <span
-class="version">(2021.09.10<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of the I2P package
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">all (14.7
-KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p-keyring/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing I2P's
-repositories. Upon installation of this package, your APT trusted
-keyring will updated with these keys. Upon removal of this package, the
-keys provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(2.3.0-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_2.3.0-1ubuntu1_all.deb">all (11.0
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(0.9.46-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46-1ubuntu1_i386.deb">i386 (5.3
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the libjbigi JNI library (and on x86 platforms,
-jcpuid).<br />
-<br />
-libjbigi is a math library that is part of the I2P installation. Use of
-this library greatly enhances the efficiency of cryptographic
-algorithms, such as the ones used by I2P. You can expect to see a 5-7x
-speed improvement on certain tasks, such as elGamal
-encryption/decryption.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">syndie</span> <span
-class="version">(1.107b-2ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Syndie anonymous distributed
-forums</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/syndie/syndie_1.107b-2ubuntu1_all.deb">all (4.0
-MB)</a></span> | <span class="source"><a
-href="pool/main/s/syndie/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Syndie anonymous distributed forums</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(2.3.0-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_amd64.deb">amd64
-(272.1 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_arm64.deb">arm64
-(271.2 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_armhf.deb">armhf
-(270.9 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_ppc64el.deb">ppc64el
-(271.7 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_s390x.deb">s390x
-(271.1 KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the libjbigi JNI library (and on x86 platforms,
-jcpuid).<br />
-<br />
-libjbigi is a math library that is part of the I2P installation. Use of
-this library greatly enhances the efficiency of cryptographic
-algorithms, such as the ones used by I2P. You can expect to see a 5-7x
-speed improvement on certain tasks, such as elGamal
-encryption/decryption.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(0.9.41-1~disco+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_0.9.41-1~disco+1_all.deb">all (65.2
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package depends on the router, jbigi, the java service wrapper, and
-includes support to run I2P as a daemon.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(0.9.41-1~disco+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_0.9.41-1~disco+1_all.deb">all (3.4
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package contains the Javadoc files.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-keyring</span> <span
-class="version">(2018.09.16<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of the I2P package
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p-keyring/i2p-keyring_2018.09.16_all.deb">all (13.6
-KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p-keyring/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing I2P's
-repositories. Upon instalation of this package, your APT trusted keyring
-will updated with these keys. Upon removal of this package, the keys
-provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(0.9.41-1~disco+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_0.9.41-1~disco+1_all.deb">all (9.1
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-TrueType fonts (such as those provided in the package fonts-dejavu) are
-required in order to generate graphs.</p>
-</blockquote>
-</div>
-<h2 style="text-align:center" id="stretch">Packages in Stretch (Debian
-old old stable)</h2>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(0.9.46p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_0.9.46p-1~trusty+1_all.deb">all (68.6
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - anonymous network</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(0.9.46p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_0.9.46p-1~trusty+1_all.deb">all (2.9
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - developer documentation</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-keyring</span> <span
-class="version">(2021.09.10<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of the I2P package
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">all (14.7
-KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p-keyring/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing I2P's
-repositories. Upon installation of this package, your APT trusted
-keyring will updated with these keys. Upon removal of this package, the
-keys provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(0.9.46p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_0.9.46p-1~trusty+1_all.deb">all (13.7
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - Router</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">killyourtv-keyring</span> <span
-class="version">(2015.03.27.1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of KillYourTV's
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/k/killyourtv-keyring/killyourtv-keyring_2015.03.27.1_all.deb">all
-(12.6 KB)</a></span> | <span class="source"><a
-href="pool/main/k/killyourtv-keyring/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing KillYourTV's
-repositories. Upon instalation of this package, your APT trusted keyring
-will updated with these keys. Upon removal of this package, the keys
-provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(0.9.46p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_amd64.deb">amd64
-(4.8 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_armhf.deb">armhf
-(3.7 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_i386.deb">i386
-(4.8 KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - libjbigi library</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">syndie</span> <span
-class="version">(1.107b-2ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Syndie anonymous distributed
-forums</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/syndie/syndie_1.107b-2ubuntu1_all.deb">all (4.0
-MB)</a></span> | <span class="source"><a
-href="pool/main/s/syndie/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Syndie anonymous distributed forums</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(0.9.45p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_0.9.45p-1~trusty+1_all.deb">all (69.0
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - anonymous network</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(0.9.45p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_0.9.45p-1~trusty+1_all.deb">all (2.8
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - developer documentation</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(0.9.45p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_0.9.45p-1~trusty+1_all.deb">all (12.8
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - Router</p>
-</blockquote>
-</div>
-<h2 style="text-align:center" id="jessie">Packages in Jessie (Debian's
-old old old stable distribution, released 2015-04-25)</h2>
-<div class="package">
-<p><span class="name">anoncoin-qt</span> <span
-class="version">(0.8.5.6-1+b1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">peer-to-peer network based digital currency -
-Qt GUI</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/a/anoncoin/anoncoin-qt_0.8.5.6-1+b1_amd64.deb">amd64
-(1.7 MB)</a>, <a
-href="pool/main/a/anoncoin/anoncoin-qt_0.8.5.6-1+b1_i386.deb">i386 (1.8
-MB)</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Anoncoin is a free open source peer-to-peer electronic cash system
-that is completely decentralized, without the need for a central server
-or trusted parties. Users hold the crypto keys to their own money and
-transact directly with each other, with the help of a P2P network to
-check for double-spending. Anoncoin is a fork of Bitcoin.<br />
-<br />
-Full transaction history is stored locally at each client. This requires
-200 MB+ of space, slowly growing.<br />
-<br />
-This package provides Anoncoin-Qt, a GUI for Anoncoin based on Qt.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">anoncoind</span> <span
-class="version">(0.8.5.6-1+b1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">peer-to-peer network based digital currency -
-daemon</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/a/anoncoin/anoncoind_0.8.5.6-1+b1_amd64.deb">amd64
-(673.4 KB)</a>, <a
-href="pool/main/a/anoncoin/anoncoind_0.8.5.6-1+b1_i386.deb">i386 (709.9
-KB)</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Anoncoin is a free open source peer-to-peer electronic cash system
-that is completely decentralized, without the need for a central server
-or trusted parties. Users hold the crypto keys to their own money and
-transact directly with each other, with the help of a P2P network to
-check for double-spending. Anoncoin is a fork of Bitcoin.<br />
-<br />
-Full transaction history is stored locally at each client. This requires
-200 MB+ of space, slowly growing.<br />
-<br />
-This package provides anoncoind, a combined daemon and CLI tool to
-interact with the daemon.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(0.9.46p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_0.9.46p-1~trusty+1_all.deb">all (68.6
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - anonymous network</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(0.9.46p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_0.9.46p-1~trusty+1_all.deb">all (2.9
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - developer documentation</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-keyring</span> <span
-class="version">(2021.09.10<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of the I2P package
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">all (14.7
-KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p-keyring/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing I2P's
-repositories. Upon installation of this package, your APT trusted
-keyring will updated with these keys. Upon removal of this package, the
-keys provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(0.9.46p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_0.9.46p-1~trusty+1_all.deb">all (13.7
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - Router</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">killyourtv-keyring</span> <span
-class="version">(2015.03.27.1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of KillYourTV's
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/k/killyourtv-keyring/killyourtv-keyring_2015.03.27.1_all.deb">all
-(12.6 KB)</a></span> | <span class="source"><a
-href="pool/main/k/killyourtv-keyring/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing KillYourTV's
-repositories. Upon instalation of this package, your APT trusted keyring
-will updated with these keys. Upon removal of this package, the keys
-provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(0.9.46p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_amd64.deb">amd64
-(4.8 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_armhf.deb">armhf
-(3.7 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_i386.deb">i386
-(4.8 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_powerpc.deb">powerpc
-(3.9 KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - libjbigi library</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-doc</span> <span
-class="version">(3.5.25-1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper (javadoc
-files)</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-doc_3.5.25-1_all.deb">all
-(165.3 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>The Java Service Wrapper makes very easy to install a Java
-Application as a daemon process on Unix systems. The Wrapper monitors a
-JVM (Java Virtual Machine) process and automatically restarts it if it
-that the JVM has crashed or hung. This process takes just a few seconds
-once the Wrapper has decided there is a problem. It also gives the
-ability to handle process priority.<br />
-<br />
-This package contains the javadoc files.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-java</span> <span
-class="version">(3.5.25-1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper java libraries</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-java_3.5.25-1_all.deb">all
-(214.7 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the Java jar libraries used by the Java Service
-Wrapper. It can be used to handle wrapper specific attributes.<br />
-<br />
-The Java Service Wrapper makes very easy to install a Java Application
-as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
-Virtual Machine) process and automatically restarts it if it that the
-JVM has crashed or hung. This process takes just a few seconds once the
-Wrapper has decided there is a problem. It also gives the ability to
-handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-jni</span> <span
-class="version">(3.5.25-1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper JNI libraries</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1_amd64.deb">amd64
-(14.0 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1_i386.deb">i386
-(14.6 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the JNI libraries used by the Java Service
-Wrapper.<br />
-<br />
-The Java Service Wrapper makes very easy to install a Java Application
-as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
-Virtual Machine) process and automatically restarts it if it that the
-JVM has crashed or hung. This process takes just a few seconds once the
-Wrapper has decided there is a problem. It also gives the ability to
-handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">service-wrapper</span> <span
-class="version">(3.5.25-1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1_amd64.deb">amd64
-(151.1 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1_i386.deb">i386
-(155.9 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>The Java Service Wrapper makes very easy to install a Java
-Application as a daemon process on Unix systems. The Wrapper monitors a
-JVM (Java Virtual Machine) process and automatically restarts it if it
-that the JVM has crashed or hung. This process takes just a few seconds
-once the Wrapper has decided there is a problem. It also gives the
-ability to handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">syndie</span> <span
-class="version">(1.107b-2ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Syndie anonymous distributed
-forums</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/syndie/syndie_1.107b-2ubuntu1_all.deb">all (4.0
-MB)</a></span> | <span class="source"><a
-href="pool/main/s/syndie/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Syndie anonymous distributed forums</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(0.9.45p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_0.9.45p-1~trusty+1_all.deb">all (69.0
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package depends on the router, jbigi, the java service wrapper, and
-includes support to run I2P as a daemon.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(0.9.45p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_0.9.45p-1~trusty+1_all.deb">all (2.8
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package contains the Javadoc files.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(0.9.45p-1~trusty+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_0.9.45p-1~trusty+1_all.deb">all (12.8
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-TrueType fonts (such as those provided in the package fonts-dejavu) are
-required in order to generate graphs.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(0.9.19-1~deb7u+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Java Big Integer library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_0.9.19-1~deb7u+1_armel.deb">armel
-(2.8 KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the libjbigi JNI library (and on x86 platforms,
-jcpuid).<br />
-<br />
-libjbigi is a math library that is part of the I2P installation. Use of
-this library greatly enhances the efficiency of cryptographic
-algorithms, such as the ones used by I2P. You can expect to see a 5-7x
-speed improvement on certain tasks, such as elGamal
-encryption/decryption.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-java</span> <span
-class="version">(3.5.25-1~deb7u+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper java libraries</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-java_3.5.25-1~deb7u+1_all.deb">all
-(215.9 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the Java jar libraries used by the Java Service
-Wrapper. It can be used to handle wrapper specific attributes.<br />
-<br />
-The Java Service Wrapper makes very easy to install a Java Application
-as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
-Virtual Machine) process and automatically restarts it if it that the
-JVM has crashed or hung. This process takes just a few seconds once the
-Wrapper has decided there is a problem. It also gives the ability to
-handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-jni</span> <span
-class="version">(3.5.25-1~deb7u+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper JNI libraries</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_armel.deb">armel
-(14.0 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_armhf.deb">armhf
-(14.0 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_powerpc.deb">powerpc
-(15.7 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the JNI libraries used by the Java Service
-Wrapper.<br />
-<br />
-The Java Service Wrapper makes very easy to install a Java Application
-as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
-Virtual Machine) process and automatically restarts it if it that the
-JVM has crashed or hung. This process takes just a few seconds once the
-Wrapper has decided there is a problem. It also gives the ability to
-handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">service-wrapper</span> <span
-class="version">(3.5.25-1~deb7u+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_armel.deb">armel
-(159.0 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_armhf.deb">armhf
-(158.3 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_powerpc.deb">powerpc
-(161.8 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>The Java Service Wrapper makes very easy to install a Java
-Application as a daemon process on Unix systems. The Wrapper monitors a
-JVM (Java Virtual Machine) process and automatically restarts it if it
-that the JVM has crashed or hung. This process takes just a few seconds
-once the Wrapper has decided there is a problem. It also gives the
-ability to handle process priority.</p>
-</blockquote>
-</div>
-<hr />
-<h2 style="text-align:center" id="wheezy">Packages in Wheezy (Debian's
-old old old old stable distribution, released 2013-05-04)</h2>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(0.9.46p-1~precise+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_0.9.46p-1~precise+1_all.deb">all (67.8
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - anonymous network</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(0.9.46p-1~precise+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_0.9.46p-1~precise+1_all.deb">all (2.9
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - developer documentation</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-keyring</span> <span
-class="version">(2021.09.10<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of the I2P package
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">all (14.7
-KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p-keyring/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing I2P's
-repositories. Upon installation of this package, your APT trusted
-keyring will updated with these keys. Upon removal of this package, the
-keys provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(0.9.46p-1~precise+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_0.9.46p-1~precise+1_all.deb">all (13.8
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - Router</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(0.9.46p-1~precise+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~precise+1_amd64.deb">amd64
-(4.8 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~precise+1_armhf.deb">armhf
-(3.5 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~precise+1_i386.deb">i386
-(4.9 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~precise+1_powerpc.deb">powerpc
-(3.9 KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - libjbigi library</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(0.9.45p-1~precise+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_0.9.45p-1~precise+1_all.deb">all (68.4
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package depends on the router, jbigi, the java service wrapper, and
-includes support to run I2P as a daemon.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(0.9.45p-1~precise+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_0.9.45p-1~precise+1_all.deb">all (2.8
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package contains the Javadoc files.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(0.9.45p-1~precise+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_0.9.45p-1~precise+1_all.deb">all (12.9
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-TrueType fonts (such as those provided in the package fonts-dejavu) are
-required in order to generate graphs.</p>
-</blockquote>
-</div>
-<hr />
-<h2 style="text-align:center" id="sid">Packages in Unstable (sid)</h2>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(2.3.0-1~lunar+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_2.3.0-1~lunar+1_all.deb">all (74.8
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - anonymous network</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(2.3.0-1~lunar+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_2.3.0-1~lunar+1_all.deb">all (3.0
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - developer documentation</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-keyring</span> <span
-class="version">(2021.09.10<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of the I2P package
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">all (14.7
-KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p-keyring/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing I2P's
-repositories. Upon installation of this package, your APT trusted
-keyring will updated with these keys. Upon removal of this package, the
-keys provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(2.3.0-1~lunar+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_2.3.0-1~lunar+1_all.deb">all (11.1
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - Router</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">killyourtv-keyring</span> <span
-class="version">(2015.03.27.1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">GnuPG keys of KillYourTV's
-repository</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/k/killyourtv-keyring/killyourtv-keyring_2015.03.27.1_all.deb">all
-(12.6 KB)</a></span> | <span class="source"><a
-href="pool/main/k/killyourtv-keyring/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This package provides digital keys used for signing KillYourTV's
-repositories. Upon instalation of this package, your APT trusted keyring
-will updated with these keys. Upon removal of this package, the keys
-provided by this package will be removed from the APT trusted
-keyring.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(0.9.46-1ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_0.9.46-1ubuntu1_i386.deb">i386 (5.3
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the libjbigi JNI library (and on x86 platforms,
-jcpuid).<br />
-<br />
-libjbigi is a math library that is part of the I2P installation. Use of
-this library greatly enhances the efficiency of cryptographic
-algorithms, such as the ones used by I2P. You can expect to see a 5-7x
-speed improvement on certain tasks, such as elGamal
-encryption/decryption.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-doc</span> <span
-class="version">(3.5.25-1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper (javadoc
-files)</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-doc_3.5.25-1_all.deb">all
-(165.3 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>The Java Service Wrapper makes very easy to install a Java
-Application as a daemon process on Unix systems. The Wrapper monitors a
-JVM (Java Virtual Machine) process and automatically restarts it if it
-that the JVM has crashed or hung. This process takes just a few seconds
-once the Wrapper has decided there is a problem. It also gives the
-ability to handle process priority.<br />
-<br />
-This package contains the javadoc files.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-java</span> <span
-class="version">(3.5.25-1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper java libraries</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-java_3.5.25-1_all.deb">all
-(214.7 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the Java jar libraries used by the Java Service
-Wrapper. It can be used to handle wrapper specific attributes.<br />
-<br />
-The Java Service Wrapper makes very easy to install a Java Application
-as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
-Virtual Machine) process and automatically restarts it if it that the
-JVM has crashed or hung. This process takes just a few seconds once the
-Wrapper has decided there is a problem. It also gives the ability to
-handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-jni</span> <span
-class="version">(3.5.25-1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper JNI libraries</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1_amd64.deb">amd64
-(14.0 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1_i386.deb">i386
-(14.6 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the JNI libraries used by the Java Service
-Wrapper.<br />
-<br />
-The Java Service Wrapper makes very easy to install a Java Application
-as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
-Virtual Machine) process and automatically restarts it if it that the
-JVM has crashed or hung. This process takes just a few seconds once the
-Wrapper has decided there is a problem. It also gives the ability to
-handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">service-wrapper</span> <span
-class="version">(3.5.25-1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1_amd64.deb">amd64
-(151.1 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1_i386.deb">i386
-(155.9 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>The Java Service Wrapper makes very easy to install a Java
-Application as a daemon process on Unix systems. The Wrapper monitors a
-JVM (Java Virtual Machine) process and automatically restarts it if it
-that the JVM has crashed or hung. This process takes just a few seconds
-once the Wrapper has decided there is a problem. It also gives the
-ability to handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">syndie</span> <span
-class="version">(1.107b-2ubuntu1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Syndie anonymous distributed
-forums</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/syndie/syndie_1.107b-2ubuntu1_all.deb">all (4.0
-MB)</a></span> | <span class="source"><a
-href="pool/main/s/syndie/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Syndie anonymous distributed forums</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(2.3.0-1~lunar+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - libjbigi
-library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1~lunar+1_amd64.deb">amd64
-(259.6 KB)</a>, <a
-href="pool/main/i/i2p/libjbigi-jni_2.3.0-1~lunar+1_armhf.deb">armhf
-(258.3 KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>Invisible Internet Project (I2P) - libjbigi library</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p</span> <span
-class="version">(0.9.45-1~disco+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - anonymous
-network</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p_0.9.45-1~disco+1_all.deb">all (66.1
-KB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package depends on the router, jbigi, the java service wrapper, and
-includes support to run I2P as a daemon.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-doc</span> <span
-class="version">(0.9.45-1~disco+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) - developer
-documentation</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-doc_0.9.45-1~disco+1_all.deb">all (3.4
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-This package contains the Javadoc files.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">i2p-router</span> <span
-class="version">(0.9.45-1~disco+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Invisible Internet Project (I2P) -
-Router</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/i2p-router_0.9.45-1~disco+1_all.deb">all (9.6
-MB)</a></span> | <span class="source"><a href="pool/main/i/i2p/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>I2P is an anonymizing network, offering a simple layer that
-identity-sensitive applications can use to securely communicate. All
-data is wrapped with several layers of encryption, and the network is
-both distributed and dynamic, with no trusted parties.<br />
-<br />
-TrueType fonts (such as those provided in the package fonts-dejavu) are
-required in order to generate graphs.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libjbigi-jni</span> <span
-class="version">(0.9.19-1~deb7u+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Java Big Integer library</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/i/i2p/libjbigi-jni_0.9.19-1~deb7u+1_armel.deb">armel
-(2.8 KB)</a></span> | <span class="source"><a
-href="pool/main/i/i2p/">Source dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the libjbigi JNI library (and on x86 platforms,
-jcpuid).<br />
-<br />
-libjbigi is a math library that is part of the I2P installation. Use of
-this library greatly enhances the efficiency of cryptographic
-algorithms, such as the ones used by I2P. You can expect to see a 5-7x
-speed improvement on certain tasks, such as elGamal
-encryption/decryption.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">libservice-wrapper-jni</span> <span
-class="version">(3.5.25-1~deb7u+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper JNI libraries</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_armel.deb">armel
-(14.0 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_armhf.deb">armhf
-(14.0 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>This Package contains the JNI libraries used by the Java Service
-Wrapper.<br />
-<br />
-The Java Service Wrapper makes very easy to install a Java Application
-as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
-Virtual Machine) process and automatically restarts it if it that the
-JVM has crashed or hung. This process takes just a few seconds once the
-Wrapper has decided there is a problem. It also gives the ability to
-handle process priority.</p>
-</blockquote>
-</div>
-<div class="package">
-<p><span class="name">service-wrapper</span> <span
-class="version">(3.5.25-1~deb7u+1<span class="section">, <span
-class="main">main</span></span>)</span> - <span
-class="short_description">Jar daemon wrapper</span><br />
-<span class="linkline">Binary for arch <span class="archs"><a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_armel.deb">armel
-(159.0 KB)</a>, <a
-href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_armhf.deb">armhf
-(158.3 KB)</a></span> | <span class="source"><a
-href="pool/main/s/service-wrapper-java/">Source
-dir</a></span></span><br />
-<br />
-</p>
-<blockquote>
-<p>The Java Service Wrapper makes very easy to install a Java
-Application as a daemon process on Unix systems. The Wrapper monitors a
-JVM (Java Virtual Machine) process and automatically restarts it if it
-that the JVM has crashed or hung. This process takes just a few seconds
-once the Wrapper has decided there is a problem. It also gives the
-ability to handle process priority.</p>
-</blockquote>
-</div>
+<html>
+  <head>
+    <title>
+      I2P Packages for...
+    </title>
+    <meta name="author" content="eyedeekay" />
+    <meta name="description" content="i2p.reprepro" />
+    <meta name="keywords" content="trunk" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="showhider.css" />
+    <link rel="stylesheet" type="text/css" href="darklight.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="checkboxDarkLight">
+    <div class="container">
+    <div id="navbar">
+      <a href="#shownav">
+        Show navigation
+      </a>
+      <div id="shownav">
+        <div id="hidenav">
+          <ul>
+            <li>
+              <a href="..">
+                Up one level ^
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                index
+              </a>
+            </li>
+            <li>
+              <a href="DEBIAN.html">
+                DEBIAN
+              </a>
+            </li>
+            <li>
+              <a href="SETUP.html">
+                SETUP
+              </a>
+            </li>
+            <li>
+              <a href="debian-experimental/index.html">
+                debian-experimental/index.html
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                index.html
+              </a>
+            </li>
+            <li>
+              <a href="ubuntu/index.html">
+                ubuntu/index.html
+              </a>
+            </li>
+          </ul>
+          <br>
+          <a href="#hidenav">
+            Hide Navigation
+          </a>
+        </div>
+      </div>
+    </div>
+    <a id="returnhome" href="/">
+      /
+    </a>
+    <h1 id="i2p-packages-for-debian-and-ubuntu style="text-align:center"">
+      I2P Packages for Debian and Ubuntu
+    </h1>
+    <h2>
+      Overview
+    </h2>
+    <p>
+      This is the official repository for the
+      <a href="https://geti2p.net/">
+        I2P
+        project
+      </a>
+      .
+      For instructions, see below, and more information is on
+      <a href="https://geti2p.net/debian">
+        geti2p.net
+      </a>
+      .
+    </p>
+    <p>
+      For Ubuntu, we recommend
+      <a href="https://launchpad.net/~i2p-maintainers/+archive/ubuntu/i2p">
+        our
+        PPA
+      </a>
+      instead, and instructions are on
+      <a href="https://geti2p.net/debian">
+        geti2p.net
+      </a>
+      .
+    </p>
+    <p>
+      The signing key for this repo
+      <a href="https://geti2p.net/_static/i2p-debian-repo.key.asc">
+        may be downloaded
+        here
+      </a>
+      .
+    </p>
+    <h2>
+      News
+    </h2>
+    <ul>
+      <li>
+        <strong>
+          2023-07-02
+        </strong>
+        I2P 2.3.0 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2023-04-16
+        </strong>
+        I2P 2.2.1 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2023-03-17
+        </strong>
+        I2P 2.2.0 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2023-01-11
+        </strong>
+        I2P 2.1.0 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2022-12-02
+        </strong>
+        2.0.0-2ubuntu1 added to Focal+, Buster+, to fix a
+        minor issue with stray symlinks in / (Bionic not affected)
+      </li>
+      <li>
+        <strong>
+          2022-11-22
+        </strong>
+        I2P 2.0.0 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2022-11-04
+        </strong>
+        Lunar repo added.
+      </li>
+      <li>
+        <strong>
+          2022-08-23
+        </strong>
+        I2P 1.9.0 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2022-05-24
+        </strong>
+        I2P 1.8.0 release added to all repos; Kinetic repo
+        added.
+      </li>
+      <li>
+        <strong>
+          2022-03-03
+        </strong>
+        Fixed the architecture listings below for
+        libjbigi-jni.
+      </li>
+      <li>
+        <strong>
+          2022-02-22
+        </strong>
+        I2P 1.7.0 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2021-11-30
+        </strong>
+        I2P 1.6.1 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2021-10-23
+        </strong>
+        Jammy repo added.
+      </li>
+      <li>
+        <strong>
+          2021-09-10
+        </strong>
+        Repository signing key updated; Bookworm repo added;
+        stable/oldstable links updated.
+      </li>
+      <li>
+        <strong>
+          2021-08-30
+        </strong>
+        I2P 1.5.0 release added to all repos, sorry for the
+        delay.
+      </li>
+      <li>
+        <strong>
+          2021-05-19
+        </strong>
+        I2P 0.9.50 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2021-05-16
+        </strong>
+        Impish and Bullseye repos added.
+      </li>
+      <li>
+        <strong>
+          2021-02-17
+        </strong>
+        I2P 0.9.49 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2020-12-02
+        </strong>
+        I2P 0.9.48 release added to all supported repos;
+        Hirsute repo added.
+      </li>
+      <li>
+        <strong>
+          2020-10-17
+        </strong>
+        NOTE: I2P 0.9.47 was the last release for Xenial
+        (16.04). Xenial I2P packages are no longer supported.
+      </li>
+      <li>
+        <strong>
+          2020-08-25
+        </strong>
+        I2P 0.9.47 release added to all supported repos
+        (Buster+, Xenial+). Wheezy / Jessie / Stretch / Precise / Trusty I2P
+        packages are no longer supported. Java 8 is now required.
+      </li>
+      <li>
+        <strong>
+          2020-05-26
+        </strong>
+        I2P 0.9.46 release added to all repos; Groovy repo
+        added. NOTE: This is the last release for Wheezy / Jessie / Stretch
+        / Precise / Trusty. Java 8 will be required starting with 0.9.47.
+      </li>
+      <li>
+        <strong>
+          2020-02-25
+        </strong>
+        I2P 0.9.45 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2019-12-01
+        </strong>
+        I2P 0.9.44 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2019-10-22
+        </strong>
+        I2P 0.9.43 release added to all repos; Focal repo
+        added.
+      </li>
+      <li>
+        <strong>
+          2019-09-21
+        </strong>
+        Repository signing key updated
+      </li>
+      <li>
+        <strong>
+          2019-08-28
+        </strong>
+        I2P 0.9.42 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2019-07-24
+        </strong>
+        Updated stable, oldstable, newstable aliases, added
+        oldoldstable, testing, bullseye aliases.
+      </li>
+      <li>
+        <strong>
+          2019-07-03
+        </strong>
+        I2P 0.9.41 release added to all repos. Added arm64,
+        armhf, powerpc, ppc64el, and s390x architectures to all supported
+        repos.
+      </li>
+      <li>
+        <strong>
+          2019-05-08
+        </strong>
+        I2P 0.9.40 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2019-04-19
+        </strong>
+        I2P 0.9.39 in Bionic and Cosmic fixed for the change
+        from Jetty 9.2.22 to 9.4.15; Eoan repo added.
+      </li>
+      <li>
+        <strong>
+          2019-03-22
+        </strong>
+        I2P 0.9.39 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2019-01-26
+        </strong>
+        I2P 0.9.38 packages for Wheezy/Jessie/Precise/Trusty
+        fixed.
+      </li>
+      <li>
+        <strong>
+          2019-01-23
+        </strong>
+        Disco repo added; I2P 0.9.38 release added to all
+        repos.
+      </li>
+      <li>
+        <strong>
+          2018-10-05
+        </strong>
+        Buster repo added; I2P 0.9.37 release added to all
+        repos.
+      </li>
+      <li>
+        <strong>
+          2018-09-16
+        </strong>
+        Repository signing key updated
+      </li>
+      <li>
+        <strong>
+          2018-08-24
+        </strong>
+        I2P 0.9.36 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2018-06-27
+        </strong>
+        Cosmic repo added; I2P 0.9.35 release added to all
+        repos.
+      </li>
+      <li>
+        <strong>
+          2018-04-20
+        </strong>
+        I2P 0.9.34 is now in official Debian Sid and Ubuntu
+        Bionic repos. If you are running Debian Sid or Ubuntu Bionic or
+        later, you do not need to use this repo; simply install the i2p
+        package using your package manager.
+      </li>
+      <li>
+        <strong>
+          2018-04-11
+        </strong>
+        I2P 0.9.34 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2018-01-31
+        </strong>
+        Bionic repo added; I2P 0.9.33 release added to all
+        repos.
+      </li>
+      <li>
+        <strong>
+          2017-11-08
+        </strong>
+        I2P 0.9.32 release added to all repos.
+      </li>
+      <li>
+        <strong>
+          2017-09-21
+        </strong>
+        Repository signing key package fixed again for older
+        distros, sorry about that
+      </li>
+      <li>
+        <strong>
+          2017-09-20
+        </strong>
+        Repository signing key package fixed, sorry about
+        that
+      </li>
+      <li>
+        <strong>
+          2017-09-18
+        </strong>
+        Repository signing key updated
+      </li>
+      <li>
+        <strong>
+          2017-08-09
+        </strong>
+        Artful repo added; I2P 0.9.31 release added to all
+        repos.
+      </li>
+      <li>
+        <strong>
+          2017-05-04
+        </strong>
+        I2P 0.9.30 release added to all repos including
+        stretch.
+      </li>
+      <li>
+        <strong>
+          2017-04-15
+        </strong>
+        Stretch and stretch-testing repos added.
+        Stretch-testing now contains a 0.9.29-17-rc development build.
+        Please report results in IRC #i2p-dev.
+      </li>
+      <li>
+        <strong>
+          2017-01-06
+        </strong>
+        New
+        <a href="https://github.com/i2p/i2p.i2p/blob/master/debian-alt/doc/dependencies.txt">
+          status notes on the i2p
+          package
+        </a>
+        now available.
+      </li>
+      <li>
+        <strong>
+          2016-11-04
+        </strong>
+        https now supported on host
+        <a href="https://deb.i2p2.de/">
+          deb.i2p2.de
+        </a>
+        .
+        http is still available on host
+        <a href="http://deb.i2p2.no/">
+          deb.i2p2.no
+        </a>
+        .
+        If https does not work, do: sudo apt-get install apt-transport-https
+      </li>
+      <li>
+        <strong>
+          2016-10-01
+        </strong>
+        Repository signing key updated
+      </li>
+      <li>
+        <strong>
+          2014-03-09
+        </strong>
+        Now serving
+        <a href="http://www.anoncoin.net/">
+          Anoncoin
+        </a>
+        and packages for Ubuntu
+      </li>
+      <li>
+        <strong>
+          2013-10-10
+        </strong>
+        Repository started with hosting generously provided
+        by Meeh.
+      </li>
+    </ul>
+    <h2>
+      Notes
+    </h2>
+    <p>
+      Any necessary dependency packages will be found in either Debian\&rsquo;s
+      repository or this one. Please report any problems with the I2P packages
+      on the
+      <a href="https://trac.i2p2.de/newticket?component=package/debian&amp;owner=killyourtv&amp;cc=killyourtv@mail.i2p">
+        I2P Bug
+        Tracker
+      </a>
+      .
+      Bugs for Anoncoin should be reported on its
+      <a href="https://github.com/anoncoin/anoncoin/issues">
+        Github project
+        page
+      </a>
+      .
+    </p>
+    <h3>
+      Repository Information
+    </h3>
+    <p>
+      Add lines like the following to
+      <code>
+        /etc/apt/sources.list.d/i2p.list
+      </code>
+      .
+    </p>
+    <p>
+      For Debian Wheezy (EOL May 2018):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ wheezy main
+    deb-src https://deb.i2pgit.org/ wheezy main
+</code></pre>
+    <p>
+      For Debian Jessie (EOL June 2020):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ jessie main
+    deb-src https://deb.i2pgit.org/ jessie main
+</code></pre>
+    <p>
+      For Debian Stretch (oldoldstable):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ stretch main
+    deb-src https://deb.i2pgit.org/ stretch main
+</code></pre>
+    <p>
+      For Debian Buster (oldstable):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ buster main
+    deb-src https://deb.i2pgit.org/ buster main
+</code></pre>
+    <p>
+      For Debian Bullseye (stable):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ bullseye main
+    deb-src https://deb.i2pgit.org/ bullseye main
+</code></pre>
+    <p>
+      For Debian Bookworm (newstable):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ bookworm main
+    deb-src https://deb.i2pgit.org/ bookworm main
+</code></pre>
+    <p>
+      For Debian testing or Sid (unstable):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ unstable main
+    deb-src https://deb.i2pgit.org/ unstable main
+</code></pre>
+    <p>
+      For Ubuntu Precise (LTS 12.04):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ precise main
+    deb-src https://deb.i2pgit.org/ precise main
+</code></pre>
+    <p>
+      For Ubuntu Trusty (LTS 14.04):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ trusty main
+    deb-src https://deb.i2pgit.org/ trusty main
+</code></pre>
+    <p>
+      For Ubuntu Xenial (LTS 16.04):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ xenial main
+    deb-src https://deb.i2pgit.org/ xenial main
+</code></pre>
+    <p>
+      For Ubuntu Bionic (LTS 18.04):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ bionic main
+    deb-src https://deb.i2pgit.org/ bionic main
+</code></pre>
+    <p>
+      For Ubuntu Focal (LTS 20.04):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ focal main
+    deb-src https://deb.i2pgit.org/ focal main
+</code></pre>
+    <p>
+      For Ubuntu Jammy (LTS 22.04):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ jammy main
+    deb-src https://deb.i2pgit.org/ jammy main
+</code></pre>
+    <p>
+      For Ubuntu Lunar (22.10):
+    </p>
+    <pre><code class="language-listing">    deb https://deb.i2pgit.org/ lunar main
+    deb-src https://deb.i2pgit.org/ lunar main
+</code></pre>
+    <h3>
+      Updating the package list
+    </h3>
+    <p>
+      After adding the repo to apt, update the package list with
+    </p>
+    <pre><code class="language-listing">    sudo apt-get update
+</code></pre>
+    <p>
+      APT will likely complain about a missing key. If it does you can resolve
+      this by running the following:
+    </p>
+    <pre><code class="language-listing">    sudo apt-get install i2p-keyring &amp;&amp; apt-get update
+</code></pre>
+    <p>
+      Alternately, you may
+      <a href="https://geti2p.net/_static/i2p-debian-repo.key.asc">
+        download the key
+        here
+      </a>
+      and then do:
+    </p>
+    <pre><code class="language-listing">    sudo apt-key add i2p-debian-repo.key.asc
+</code></pre>
+    <h2>
+      Current Contents
+    </h2>
+    <p>
+      The current contents of the repo are listed below. This information is
+      automatically generated.
+    </p>
+    <hr />
+    <hr />
+    <h2 id="bullseye style="text-align:center"">
+      Packages in Bullseye (Debian stable)
+    </h2>
+    <p>
+      ::: package
+      [i2p]{.name} [(2.3.0-1ubuntu1[, [main]{.main}]{.section})]{.version} -
+      [Invisible Internet Project (I2P) - anonymous
+      network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_2.3.0-1ubuntu1_all.deb">
+        all (70.9
+        KB)
+      </a>
+      ]{.archs} | [
+      <a href="pool/main/i/i2p/">
+        Source
+        dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package depends on the router, jbigi, the java service wrapper,
+        and includes support to run I2P as a daemon.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(2.3.0-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_2.3.0-1ubuntu1_all.deb">
+        all (3.7
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package contains the Javadoc files.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-keyring]{.name} [(2021.09.10[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of the I2P package
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">
+        all (14.7
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p-keyring/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing I2P\&rsquo;s
+        repositories. Upon installation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(2.3.0-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_2.3.0-1ubuntu1_all.deb">
+        all (11.0
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(0.9.46-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46-1ubuntu1_i386.deb">
+        i386 (5.3
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the libjbigi JNI library (and on x86 platforms,
+        jcpuid).
+        <br />
+        <br />
+        libjbigi is a math library that is part of the I2P installation. Use
+        of this library greatly enhances the efficiency of cryptographic
+        algorithms, such as the ones used by I2P. You can expect to see a 5-7x
+        speed improvement on certain tasks, such as elGamal
+        encryption/decryption.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(2.3.0-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_amd64.deb">
+        amd64 (272.1
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_arm64.deb">
+        arm64
+        (271.2 KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_armhf.deb">
+        armhf (270.9
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_ppc64el.deb">
+        ppc64el
+        (271.7 KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_s390x.deb">
+        s390x (271.1
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the libjbigi JNI library (and on x86 platforms,
+        jcpuid).
+        <br />
+        <br />
+        libjbigi is a math library that is part of the I2P installation. Use
+        of this library greatly enhances the efficiency of cryptographic
+        algorithms, such as the ones used by I2P. You can expect to see a 5-7x
+        speed improvement on certain tasks, such as elGamal
+        encryption/decryption.
+        :::
+      </p>
+    </blockquote>
+    <h2 id="buster style="text-align:center"">
+      Packages in Buster (Debian old stable)
+    </h2>
+    <p>
+      ::: package
+      [i2p]{.name} [(2.3.0-1ubuntu1[, [main]{.main}]{.section})]{.version} -
+      [Invisible Internet Project (I2P) - anonymous
+      network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_2.3.0-1ubuntu1_all.deb">
+        all (70.9
+        KB)
+      </a>
+      ]{.archs} | [
+      <a href="pool/main/i/i2p/">
+        Source
+        dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package depends on the router, jbigi, the java service wrapper,
+        and includes support to run I2P as a daemon.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(2.3.0-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_2.3.0-1ubuntu1_all.deb">
+        all (3.7
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package contains the Javadoc files.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-keyring]{.name} [(2021.09.10[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of the I2P package
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">
+        all (14.7
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p-keyring/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing I2P\&rsquo;s
+        repositories. Upon installation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(2.3.0-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_2.3.0-1ubuntu1_all.deb">
+        all (11.0
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(0.9.46-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46-1ubuntu1_i386.deb">
+        i386 (5.3
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the libjbigi JNI library (and on x86 platforms,
+        jcpuid).
+        <br />
+        <br />
+        libjbigi is a math library that is part of the I2P installation. Use
+        of this library greatly enhances the efficiency of cryptographic
+        algorithms, such as the ones used by I2P. You can expect to see a 5-7x
+        speed improvement on certain tasks, such as elGamal
+        encryption/decryption.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [syndie]{.name} [(1.107b-2ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Syndie anonymous distributed
+      forums]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/syndie/syndie_1.107b-2ubuntu1_all.deb">
+        all (4.0
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/s/syndie/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Syndie anonymous distributed forums
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(2.3.0-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_amd64.deb">
+        amd64 (272.1
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_arm64.deb">
+        arm64
+        (271.2 KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_armhf.deb">
+        armhf (270.9
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_ppc64el.deb">
+        ppc64el
+        (271.7 KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1ubuntu1_s390x.deb">
+        s390x (271.1
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the libjbigi JNI library (and on x86 platforms,
+        jcpuid).
+        <br />
+        <br />
+        libjbigi is a math library that is part of the I2P installation. Use
+        of this library greatly enhances the efficiency of cryptographic
+        algorithms, such as the ones used by I2P. You can expect to see a 5-7x
+        speed improvement on certain tasks, such as elGamal
+        encryption/decryption.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p]{.name} [(0.9.41-1~disco+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - anonymous network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_0.9.41-1~disco+1_all.deb">
+        all (65.2
+        KB)
+      </a>
+      ]{.archs} | [
+      <a href="pool/main/i/i2p/">
+        Source
+        dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package depends on the router, jbigi, the java service wrapper,
+        and includes support to run I2P as a daemon.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(0.9.41-1~disco+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_0.9.41-1~disco+1_all.deb">
+        all (3.4
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package contains the Javadoc files.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-keyring]{.name} [(2018.09.16[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of the I2P package
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p-keyring/i2p-keyring_2018.09.16_all.deb">
+        all (13.6
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p-keyring/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing I2P\&rsquo;s
+        repositories. Upon instalation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(0.9.41-1~disco+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_0.9.41-1~disco+1_all.deb">
+        all (9.1
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        TrueType fonts (such as those provided in the package fonts-dejavu)
+        are required in order to generate graphs.
+        :::
+      </p>
+    </blockquote>
+    <h2 id="stretch style="text-align:center"">
+      Packages in Stretch (Debian old old stable)
+    </h2>
+    <p>
+      ::: package
+      [i2p]{.name} [(0.9.46p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - anonymous network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_0.9.46p-1~trusty+1_all.deb">
+        all (68.6
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - anonymous network
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(0.9.46p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_0.9.46p-1~trusty+1_all.deb">
+        all (2.9
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - developer documentation
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-keyring]{.name} [(2021.09.10[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of the I2P package
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">
+        all (14.7
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p-keyring/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing I2P\&rsquo;s
+        repositories. Upon installation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(0.9.46p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_0.9.46p-1~trusty+1_all.deb">
+        all (13.7
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - Router
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [killyourtv-keyring]{.name} [(2015.03.27.1[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of KillYourTV\&rsquo;s
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/k/killyourtv-keyring/killyourtv-keyring_2015.03.27.1_all.deb">
+        all (12.6
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/k/killyourtv-keyring/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing KillYourTV\&rsquo;s
+        repositories. Upon instalation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(0.9.46p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_amd64.deb">
+        amd64 (4.8
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_armhf.deb">
+        armhf
+        (3.7 KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_i386.deb">
+        i386 (4.8
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - libjbigi library
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [syndie]{.name} [(1.107b-2ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Syndie anonymous distributed
+      forums]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/syndie/syndie_1.107b-2ubuntu1_all.deb">
+        all (4.0
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/s/syndie/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Syndie anonymous distributed forums
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p]{.name} [(0.9.45p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - anonymous network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_0.9.45p-1~trusty+1_all.deb">
+        all (69.0
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - anonymous network
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(0.9.45p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_0.9.45p-1~trusty+1_all.deb">
+        all (2.8
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - developer documentation
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(0.9.45p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_0.9.45p-1~trusty+1_all.deb">
+        all (12.8
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - Router
+        :::
+      </p>
+    </blockquote>
+    <h2 id="jessie style="text-align:center"">
+      Packages in Jessie (Debian\&rsquo;s old old old stable distribution, released 2015-04-25)
+    </h2>
+    <p>
+      ::: package
+      [anoncoin-qt]{.name} [(0.8.5.6-1+b1[,
+      [main]{.main}]{.section})]{.version} - [peer-to-peer network based
+      digital currency - Qt GUI]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/a/anoncoin/anoncoin-qt_0.8.5.6-1+b1_amd64.deb">
+        amd64 (1.7
+        MB)
+      </a>
+      ,
+      <a href="pool/main/a/anoncoin/anoncoin-qt_0.8.5.6-1+b1_i386.deb">
+        i386
+        (1.8
+        MB)
+      </a>
+      ]{.archs}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Anoncoin is a free open source peer-to-peer electronic cash system
+        that is completely decentralized, without the need for a central
+        server or trusted parties. Users hold the crypto keys to their own
+        money and transact directly with each other, with the help of a P2P
+        network to check for double-spending. Anoncoin is a fork of Bitcoin.
+        <br />
+        <br />
+        Full transaction history is stored locally at each client. This
+        requires 200 MB+ of space, slowly growing.
+        <br />
+        <br />
+        This package provides Anoncoin-Qt, a GUI for Anoncoin based on Qt.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [anoncoind]{.name} [(0.8.5.6-1+b1[,
+      [main]{.main}]{.section})]{.version} - [peer-to-peer network based
+      digital currency - daemon]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/a/anoncoin/anoncoind_0.8.5.6-1+b1_amd64.deb">
+        amd64 (673.4
+        KB)
+      </a>
+      ,
+      <a href="pool/main/a/anoncoin/anoncoind_0.8.5.6-1+b1_i386.deb">
+        i386
+        (709.9
+        KB)
+      </a>
+      ]{.archs}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Anoncoin is a free open source peer-to-peer electronic cash system
+        that is completely decentralized, without the need for a central
+        server or trusted parties. Users hold the crypto keys to their own
+        money and transact directly with each other, with the help of a P2P
+        network to check for double-spending. Anoncoin is a fork of Bitcoin.
+        <br />
+        <br />
+        Full transaction history is stored locally at each client. This
+        requires 200 MB+ of space, slowly growing.
+        <br />
+        <br />
+        This package provides anoncoind, a combined daemon and CLI tool to
+        interact with the daemon.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p]{.name} [(0.9.46p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - anonymous network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_0.9.46p-1~trusty+1_all.deb">
+        all (68.6
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - anonymous network
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(0.9.46p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_0.9.46p-1~trusty+1_all.deb">
+        all (2.9
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - developer documentation
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-keyring]{.name} [(2021.09.10[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of the I2P package
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">
+        all (14.7
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p-keyring/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing I2P\&rsquo;s
+        repositories. Upon installation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(0.9.46p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_0.9.46p-1~trusty+1_all.deb">
+        all (13.7
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - Router
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [killyourtv-keyring]{.name} [(2015.03.27.1[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of KillYourTV\&rsquo;s
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/k/killyourtv-keyring/killyourtv-keyring_2015.03.27.1_all.deb">
+        all (12.6
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/k/killyourtv-keyring/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing KillYourTV\&rsquo;s
+        repositories. Upon instalation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(0.9.46p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_amd64.deb">
+        amd64 (4.8
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_armhf.deb">
+        armhf
+        (3.7 KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_i386.deb">
+        i386 (4.8
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~trusty+1_powerpc.deb">
+        powerpc
+        (3.9
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - libjbigi library
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-doc]{.name} [(3.5.25-1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper (javadoc
+      files)]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-doc_3.5.25-1_all.deb">
+        all (165.3
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        <br />
+        <br />
+        This package contains the javadoc files.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-java]{.name} [(3.5.25-1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper java
+      libraries]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-java_3.5.25-1_all.deb">
+        all (214.7
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the Java jar libraries used by the Java Service
+        Wrapper. It can be used to handle wrapper specific attributes.
+        <br />
+        <br />
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-jni]{.name} [(3.5.25-1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper JNI
+      libraries]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1_amd64.deb">
+        amd64 (14.0
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1_i386.deb">
+        i386 (14.6
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the JNI libraries used by the Java Service
+        Wrapper.
+        <br />
+        <br />
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [service-wrapper]{.name} [(3.5.25-1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon
+      wrapper]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1_amd64.deb">
+        amd64 (151.1
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1_i386.deb">
+        i386 (155.9
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [syndie]{.name} [(1.107b-2ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Syndie anonymous distributed
+      forums]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/syndie/syndie_1.107b-2ubuntu1_all.deb">
+        all (4.0
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/s/syndie/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Syndie anonymous distributed forums
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p]{.name} [(0.9.45p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - anonymous network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_0.9.45p-1~trusty+1_all.deb">
+        all (69.0
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package depends on the router, jbigi, the java service wrapper,
+        and includes support to run I2P as a daemon.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(0.9.45p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_0.9.45p-1~trusty+1_all.deb">
+        all (2.8
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package contains the Javadoc files.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(0.9.45p-1~trusty+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_0.9.45p-1~trusty+1_all.deb">
+        all (12.8
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        TrueType fonts (such as those provided in the package fonts-dejavu)
+        are required in order to generate graphs.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(0.9.19-1~deb7u+1[,
+      [main]{.main}]{.section})]{.version} - [Java Big Integer
+      library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.19-1~deb7u+1_armel.deb">
+        armel (2.8
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the libjbigi JNI library (and on x86 platforms,
+        jcpuid).
+        <br />
+        <br />
+        libjbigi is a math library that is part of the I2P installation. Use
+        of this library greatly enhances the efficiency of cryptographic
+        algorithms, such as the ones used by I2P. You can expect to see a 5-7x
+        speed improvement on certain tasks, such as elGamal
+        encryption/decryption.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-java]{.name} [(3.5.25-1~deb7u+1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper java
+      libraries]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-java_3.5.25-1~deb7u+1_all.deb">
+        all (215.9
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the Java jar libraries used by the Java Service
+        Wrapper. It can be used to handle wrapper specific attributes.
+        <br />
+        <br />
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-jni]{.name} [(3.5.25-1~deb7u+1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper JNI
+      libraries]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_armel.deb">
+        armel (14.0
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_armhf.deb">
+        armhf (14.0
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_powerpc.deb">
+        powerpc (15.7
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the JNI libraries used by the Java Service
+        Wrapper.
+        <br />
+        <br />
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [service-wrapper]{.name} [(3.5.25-1~deb7u+1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon
+      wrapper]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_armel.deb">
+        armel (159.0
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_armhf.deb">
+        armhf (158.3
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_powerpc.deb">
+        powerpc (161.8
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <hr />
+    <h2 id="wheezy style="text-align:center"">
+      Packages in Wheezy (Debian\&rsquo;s old old old old stable distribution, released 2013-05-04)
+    </h2>
+    <p>
+      ::: package
+      [i2p]{.name} [(0.9.46p-1~precise+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - anonymous network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_0.9.46p-1~precise+1_all.deb">
+        all (67.8
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - anonymous network
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(0.9.46p-1~precise+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_0.9.46p-1~precise+1_all.deb">
+        all (2.9
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - developer documentation
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-keyring]{.name} [(2021.09.10[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of the I2P package
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">
+        all (14.7
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p-keyring/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing I2P\&rsquo;s
+        repositories. Upon installation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(0.9.46p-1~precise+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_0.9.46p-1~precise+1_all.deb">
+        all (13.8
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - Router
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(0.9.46p-1~precise+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~precise+1_amd64.deb">
+        amd64 (4.8
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~precise+1_armhf.deb">
+        armhf
+        (3.5 KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~precise+1_i386.deb">
+        i386 (4.9
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46p-1~precise+1_powerpc.deb">
+        powerpc (3.9
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - libjbigi library
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p]{.name} [(0.9.45p-1~precise+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - anonymous network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_0.9.45p-1~precise+1_all.deb">
+        all (68.4
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package depends on the router, jbigi, the java service wrapper,
+        and includes support to run I2P as a daemon.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(0.9.45p-1~precise+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_0.9.45p-1~precise+1_all.deb">
+        all (2.8
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package contains the Javadoc files.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(0.9.45p-1~precise+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_0.9.45p-1~precise+1_all.deb">
+        all (12.9
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        TrueType fonts (such as those provided in the package fonts-dejavu)
+        are required in order to generate graphs.
+        :::
+      </p>
+    </blockquote>
+    <hr />
+    <h2 id="sid style="text-align:center"">
+      Packages in Unstable (sid)
+    </h2>
+    <p>
+      ::: package
+      [i2p]{.name} [(2.3.0-1~lunar+1[, [main]{.main}]{.section})]{.version} -
+      [Invisible Internet Project (I2P) - anonymous
+      network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_2.3.0-1~lunar+1_all.deb">
+        all (74.8
+        KB)
+      </a>
+      ]{.archs} | [
+      <a href="pool/main/i/i2p/">
+        Source
+        dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - anonymous network
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(2.3.0-1~lunar+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_2.3.0-1~lunar+1_all.deb">
+        all (3.0
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - developer documentation
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-keyring]{.name} [(2021.09.10[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of the I2P package
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p-keyring/i2p-keyring_2021.09.10_all.deb">
+        all (14.7
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p-keyring/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing I2P\&rsquo;s
+        repositories. Upon installation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(2.3.0-1~lunar+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_2.3.0-1~lunar+1_all.deb">
+        all (11.1
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - Router
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [killyourtv-keyring]{.name} [(2015.03.27.1[,
+      [main]{.main}]{.section})]{.version} - [GnuPG keys of KillYourTV\&rsquo;s
+      repository]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/k/killyourtv-keyring/killyourtv-keyring_2015.03.27.1_all.deb">
+        all (12.6
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/k/killyourtv-keyring/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This package provides digital keys used for signing KillYourTV\&rsquo;s
+        repositories. Upon instalation of this package, your APT trusted
+        keyring will updated with these keys. Upon removal of this package,
+        the keys provided by this package will be removed from the APT trusted
+        keyring.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(0.9.46-1ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.46-1ubuntu1_i386.deb">
+        i386 (5.3
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the libjbigi JNI library (and on x86 platforms,
+        jcpuid).
+        <br />
+        <br />
+        libjbigi is a math library that is part of the I2P installation. Use
+        of this library greatly enhances the efficiency of cryptographic
+        algorithms, such as the ones used by I2P. You can expect to see a 5-7x
+        speed improvement on certain tasks, such as elGamal
+        encryption/decryption.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-doc]{.name} [(3.5.25-1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper (javadoc
+      files)]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-doc_3.5.25-1_all.deb">
+        all (165.3
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        <br />
+        <br />
+        This package contains the javadoc files.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-java]{.name} [(3.5.25-1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper java
+      libraries]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-java_3.5.25-1_all.deb">
+        all (214.7
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the Java jar libraries used by the Java Service
+        Wrapper. It can be used to handle wrapper specific attributes.
+        <br />
+        <br />
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-jni]{.name} [(3.5.25-1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper JNI
+      libraries]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1_amd64.deb">
+        amd64 (14.0
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1_i386.deb">
+        i386 (14.6
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the JNI libraries used by the Java Service
+        Wrapper.
+        <br />
+        <br />
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [service-wrapper]{.name} [(3.5.25-1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon
+      wrapper]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1_amd64.deb">
+        amd64 (151.1
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1_i386.deb">
+        i386 (155.9
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [syndie]{.name} [(1.107b-2ubuntu1[,
+      [main]{.main}]{.section})]{.version} - [Syndie anonymous distributed
+      forums]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/syndie/syndie_1.107b-2ubuntu1_all.deb">
+        all (4.0
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/s/syndie/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Syndie anonymous distributed forums
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(2.3.0-1~lunar+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - libjbigi library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1~lunar+1_amd64.deb">
+        amd64 (259.6
+        KB)
+      </a>
+      ,
+      <a href="pool/main/i/i2p/libjbigi-jni_2.3.0-1~lunar+1_armhf.deb">
+        armhf
+        (258.3
+        KB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        Invisible Internet Project (I2P) - libjbigi library
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p]{.name} [(0.9.45-1~disco+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - anonymous network]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p_0.9.45-1~disco+1_all.deb">
+        all (66.1
+        KB)
+      </a>
+      ]{.archs} | [
+      <a href="pool/main/i/i2p/">
+        Source
+        dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package depends on the router, jbigi, the java service wrapper,
+        and includes support to run I2P as a daemon.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-doc]{.name} [(0.9.45-1~disco+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - developer documentation]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-doc_0.9.45-1~disco+1_all.deb">
+        all (3.4
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        This package contains the Javadoc files.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [i2p-router]{.name} [(0.9.45-1~disco+1[,
+      [main]{.main}]{.section})]{.version} - [Invisible Internet Project
+      (I2P) - Router]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/i2p-router_0.9.45-1~disco+1_all.deb">
+        all (9.6
+        MB)
+      </a>
+      ]{.archs} |
+      [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        I2P is an anonymizing network, offering a simple layer that
+        identity-sensitive applications can use to securely communicate. All
+        data is wrapped with several layers of encryption, and the network is
+        both distributed and dynamic, with no trusted parties.
+        <br />
+        <br />
+        TrueType fonts (such as those provided in the package fonts-dejavu)
+        are required in order to generate graphs.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libjbigi-jni]{.name} [(0.9.19-1~deb7u+1[,
+      [main]{.main}]{.section})]{.version} - [Java Big Integer
+      library]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/i/i2p/libjbigi-jni_0.9.19-1~deb7u+1_armel.deb">
+        armel (2.8
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/i/i2p/">
+        Source dir
+      </a>
+      ]{.source} ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the libjbigi JNI library (and on x86 platforms,
+        jcpuid).
+        <br />
+        <br />
+        libjbigi is a math library that is part of the I2P installation. Use
+        of this library greatly enhances the efficiency of cryptographic
+        algorithms, such as the ones used by I2P. You can expect to see a 5-7x
+        speed improvement on certain tasks, such as elGamal
+        encryption/decryption.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [libservice-wrapper-jni]{.name} [(3.5.25-1~deb7u+1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon wrapper JNI
+      libraries]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_armel.deb">
+        armel (14.0
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/libservice-wrapper-jni_3.5.25-1~deb7u+1_armhf.deb">
+        armhf (14.0
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        This Package contains the JNI libraries used by the Java Service
+        Wrapper.
+        <br />
+        <br />
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <p>
+      ::: package
+      [service-wrapper]{.name} [(3.5.25-1~deb7u+1[,
+      [main]{.main}]{.section})]{.version} - [Jar daemon
+      wrapper]{.short_description}
+      <br />
+      [Binary for arch [
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_armel.deb">
+        armel (159.0
+        KB)
+      </a>
+      ,
+      <a href="pool/main/s/service-wrapper-java/service-wrapper_3.5.25-1~deb7u+1_armhf.deb">
+        armhf (158.3
+        KB)
+      </a>
+      ]{.archs}
+      | [
+      <a href="pool/main/s/service-wrapper-java/">
+        Source dir
+      </a>
+      ]{.source}
+      ]{.linkline}
+      <br />
+    </p>
+    <blockquote>
+      <p>
+        The Java Service Wrapper makes very easy to install a Java Application
+        as a daemon process on Unix systems. The Wrapper monitors a JVM (Java
+        Virtual Machine) process and automatically restarts it if it that the
+        JVM has crashed or hung. This process takes just a few seconds once
+        the Wrapper has decided there is a problem. It also gives the ability
+        to handle process priority.
+        :::
+      </p>
+    </blockquote>
+    <div id="sourcecode">
+      <span id="sourcehead">
+        <strong>
+          Get the source code:
+        </strong>
+      </span>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/i2p.reprepro.git">
+            Source Repository: (https://github.com/eyedeekay/i2p.reprepro.git)
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>
+      <a href="https://geti2p.net/">
+        <img class="i2plogo" src="i2plogo.png"></img>
+        I2P
+      </a>
+    </div>
+  </body>
+</html>

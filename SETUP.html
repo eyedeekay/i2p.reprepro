@@ -1,226 +1,74 @@
-<html>
-  <head>
-    <title>
-      I2P Packages for...
-    </title>
-    <meta name="author" content="eyedeekay" />
-    <meta name="description" content="i2p.reprepro" />
-    <meta name="keywords" content="trunk" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="showhider.css" />
-    <link rel="stylesheet" type="text/css" href="darklight.css" />
-  </head>
-  <body>
-    <input type="checkbox" id="checkboxDarkLight">
-    <div class="container">
-    <div id="navbar">
-      <a href="#shownav">
-        Show navigation
-      </a>
-      <div id="shownav">
-        <div id="hidenav">
-          <ul>
-            <li>
-              <a href="..">
-                Up one level ^
-              </a>
-            </li>
-            <li>
-              <a href="index.html">
-                index
-              </a>
-            </li>
-            <li>
-              <a href="SETUP.html">
-                SETUP
-              </a>
-            </li>
-            <li>
-              <a href="debian-experimental/index.html">
-                debian-experimental/index.html
-              </a>
-            </li>
-            <li>
-              <a href="index.html">
-                index.html
-              </a>
-            </li>
-            <li>
-              <a href="ubuntu/index.html">
-                ubuntu/index.html
-              </a>
-            </li>
-          </ul>
-          <br>
-          <a href="#hidenav">
-            Hide Navigation
-          </a>
-        </div>
-      </div>
-    </div>
-    <a id="returnhome" href="/">
-      /
-    </a>
-    <h1>
-      Dockerized, keyless, Debian and Ubuntu-ready I2P Repository Mirror Generator
-    </h1>
-    <p>
-      This is a docker container which will set up an I2P apt repository using Ubuntu and
-      <code>
-        reprepro
-      </code>
-      .
-      It is set up to automatically copy the I2P packages from the corresponding Ubuntu version to the correct Debian version.
-      The output, which can be mounted as a docker volume using the internal path
-      <code>
-        /debian_reprepro
-      </code>
-      , is a fully working Debian and Ubuntu ready I2P repository. It does not require re-signing the I2P packages on the reprepro side, meaning it can be automatically scheduled, and it can run either within the docker container or on Ubuntu 22.04 or higher.
-    </p>
-    <h2>
-      Recommended Usage(Docker)
-    </h2>
-    <p>
-      This command:
-    </p>
-    <pre><code class="language-sh">./go-apt-mirror.sh
-</code></pre>
-    <p>
-      Will produce an
-      <code>
-        ubuntu
-      </code>
-      directory in the working directory.
-      This will contain a fully working
-      <code>
-        apt
-      </code>
-      repository filesystem containing I2P
-      <code>
-        .deb
-      </code>
-      packages.
-      They are ready to upload to a server.
-    </p>
-    <p>
-      The primary advantage of doing things this way is that it requires no expertise, whatsoever, and can be run with a
-      <code>
-        cron
-      </code>
-      job, like so:
-    </p>
-    <pre><code>0 5 * * 1 bash -c 'cd /home/user/i2p.reprepro/ &amp;&amp; ./go-apt-mirror.sh &amp;&amp; cp -rv ubuntu/* /var/www/html/'
-</code></pre>
-    <h1>
-      I2P Ubuntu Packages Mirror
-    </h1>
-    <p>
-      This setup is an automated tool for downloading, mirroring, and re-signing I2P Ubuntu packages for a Debian repository.
-      When you run it:
-    </p>
-    <ul>
-      <li>
-        First, it downloads and mirrors the packages from I2P&rsquo;s launchpad repository.
-      </li>
-      <li>
-        Second, it copies the Ubuntu packages to the matching Debian distribution.
-      </li>
-      <li>
-        Third, it signs the Debian packages.
-      </li>
-      <li>
-        Last, it copies them to the HTTP/S server where they can be provided to the users.
-      </li>
-    </ul>
-    <p>
-      The result is a working repository which will work for both Debian and Ubuntu.
-    </p>
-    <h2>
-      Usage:
-    </h2>
-    <p>
-      Run either:
-    </p>
-    <ul>
-      <li>
-        <code>
-          run.sh
-        </code>
-      </li>
-      <li>
-        <strong>
-          OR
-        </strong>
-      </li>
-      <li>
-        <code>
-          reprepro.sh
-        </code>
-      </li>
-    </ul>
-    <p>
-      in order to generate a complete, signed Debian repository by setting up the launchpad packages.
-      Use only one of thse options.
-      <code>
-        run.sh
-      </code>
-      uses Docker to generate the repository and leaves a copy of it
-      it in the
-      <code>
-        ./debian_reprepro
-      </code>
-      directory.
-      <code>
-        reprepro.sh
-      </code>
-      uses the host system directly and leaves a copy of
-      the repository in the
-      <code>
-        ./debian
-      </code>
-      .
-    </p>
-    <p>
-      If you only want to mirror Ubuntu packages, it is sufficient to run the
-      <code>
-        go-apt-mirror.sh
-      </code>
-      script, which
-      will leave a copy of the repository in the
-      <code>
-        ./ubuntu
-      </code>
-      directory.
-    </p>
-    <p>
-      When you&rsquo;re done, use
-      <code>
-        copy.sh
-      </code>
-      to copy the files into the web server directory.
-    </p>
-    <div id="sourcecode">
-      <span id="sourcehead">
-        <strong>
-          Get the source code:
-        </strong>
-      </span>
-      <ul>
-        <li>
-          <a href="https://github.com/eyedeekay/i2p.reprepro.git">
-            Source Repository: (https://github.com/eyedeekay/i2p.reprepro.git)
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
-    </div>
-    <div>
-      <a href="https://geti2p.net/">
-        <img class="i2plogo" src="i2plogo.png"></img>
-        I2P
-      </a>
-    </div>
-  </body>
-</html>
+<h1
+id="dockerized-keyless-debian-and-ubuntu-ready-i2p-repository-mirror-generator">Dockerized,
+keyless, Debian and Ubuntu-ready I2P Repository Mirror Generator</h1>
+<p>This is a docker container which will set up an I2P apt repository
+using Ubuntu and <code>reprepro</code>. It is set up to automatically
+copy the I2P packages from the corresponding Ubuntu version to the
+correct Debian version. The output, which can be mounted as a docker
+volume using the internal path <code>/debian_reprepro</code>, is a fully
+working Debian and Ubuntu ready I2P repository. It does not require
+re-signing the I2P packages on the reprepro side, meaning it can be
+automatically scheduled, and it can run either within the docker
+container or on Ubuntu 22.04 or higher.</p>
+<h2 id="recommended-usagedocker">Recommended Usage(Docker)</h2>
+<p>This command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./go-apt-mirror.sh</span></span></code></pre></div>
+<p>Will produce an <code>ubuntu</code> directory in the working
+directory. This will contain a fully working <code>apt</code> repository
+filesystem containing I2P <code>.deb</code> packages. They are ready to
+upload to a server.</p>
+<p>The primary advantage of doing things this way is that it requires no
+expertise, whatsoever, and can be run with a <code>cron</code> job, like
+so:</p>
+<pre><code>0 5 * * 1 bash -c &#39;cd /home/user/i2p.reprepro/ &amp;&amp; ./go-apt-mirror.sh &amp;&amp; cp -rv ubuntu/* /var/www/html/&#39;</code></pre>
+<h1 id="i2p-ubuntu-packages-mirror">I2P Ubuntu Packages Mirror</h1>
+<p>This setup is an automated tool for downloading, mirroring, and
+re-signing I2P Ubuntu packages for a Debian repository. When you run
+it:</p>
+<ul>
+<li>First, it downloads and mirrors the packages from I2P’s launchpad
+repository.</li>
+<li>Second, it copies the Ubuntu packages to the matching Debian
+distribution.</li>
+<li>Third, it signs the Debian packages.</li>
+<li>Last, it copies them to the HTTP/S server where they can be provided
+to the users.</li>
+</ul>
+<p>The result is a working repository which will work for both Debian
+and Ubuntu.</p>
+<h2 id="usage">Usage:</h2>
+<p>Run either:</p>
+<ul>
+<li><code>run.sh</code></li>
+<li><strong>OR</strong></li>
+<li><code>reprepro.sh</code></li>
+</ul>
+<p>in order to generate a complete, signed Debian repository by setting
+up the launchpad packages. Use only one of thse options.
+<code>run.sh</code> uses Docker to generate the repository and leaves a
+copy of it it in the <code>./debian_reprepro</code> directory.
+<code>reprepro.sh</code> uses the host system directly and leaves a copy
+of the repository in the <code>./debian</code> directory. If you’ve run
+either script before, only new packages will be handled.</p>
+<h2 id="steps-for-maintainers">Steps for Maintainers:</h2>
+<p>If you are a package maintainer, you should also:</p>
+<ul>
+<li>edit README.md with a new entry for the release and generate an
+index.html file with pandoc:</li>
+</ul>
+<pre><code>$EDITOR README.md # make edits here
+pandoc -o index.html README.md</code></pre>
+<p>In order to use the working reprepro configuration in this directory,
+i.e. to add packages, make sure to add the <code>--confdir</code>
+argument:</p>
+<pre><code>reprepro --confdir ./debian/conf</code></pre>
+<p>This will only ensure that you are always using the configuration in
+this working directory. Running:</p>
+<pre><code>. env.sh</code></pre>
+<p>will append the argument automatically.</p>
+<h2 id="minimal-ubuntu-only-mirror">Minimal, Ubuntu-Only Mirror:</h2>
+<p>If you only want to mirror Ubuntu packages, it is sufficient to run
+the <code>go-apt-mirror.sh</code> script, which will leave a copy of the
+repository in the <code>./ubuntu</code> directory.</p>
+<p>When you’re done, use <code>copy.sh</code> to copy the files into the
+web server directory.</p>

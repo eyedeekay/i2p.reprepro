@@ -49,7 +49,38 @@ Run either:
 in order to generate a complete, signed Debian repository by setting up the launchpad packages.
 Use only one of thse options. `run.sh` uses Docker to generate the repository and leaves a copy of it
 it in the `./debian_reprepro` directory. `reprepro.sh` uses the host system directly and leaves a copy of
-the repository in the `./debian`.
+the repository in the `./debian` directory. If you've run either script before, only new packages will be
+handled.
+
+Steps for Maintainers:
+----------------------
+
+If you are a package maintainer, you should also:
+
+ - edit README.md with a new entry for the release and generate an index.html file with pandoc:
+
+```
+$EDITOR README.md # make edits here
+pandoc -o index.html README.md
+```
+
+In order to use the working reprepro configuration in this directory, i.e. to add packages, make sure to
+add the `--confdir` argument:
+
+```
+reprepro --confdir ./debian/conf
+```
+
+This will only ensure that you are always using the configuration in this working directory. Running:
+
+```
+. env.sh
+```
+
+will append the argument automatically.
+
+Minimal, Ubuntu-Only Mirror:
+----------------------------
 
 If you only want to mirror Ubuntu packages, it is sufficient to run the `go-apt-mirror.sh` script, which
 will leave a copy of the repository in the `./ubuntu` directory.

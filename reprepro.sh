@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 . ./config.sh
-for i in bionic focal jammy kinetic lunar
+for i in bionic focal jammy kinetic lunar mantic
 do
 	reprepro -v --noskipold -b ./debian_"$CUSTOM"reprepro --confdir ./debian/"$CUSTOM"conf --logdir ./debian_logs update $i
 done

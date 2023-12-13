@@ -1,2 +1,2 @@
 
-alias reprepro="reprepro --confdir=./debian/conf --logdir=./debian_logs"
+alias reprepro="reprepro -v -b ./debian_"$CUSTOM"reprepro --confdir ./debian/"$CUSTOM"conf --logdir ./debian_logs"

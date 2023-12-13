@@ -1,0 +1,242 @@
+<html>
+  <head>
+    <title>
+      I2P Packages for...
+    </title>
+    <meta name="author" content="eyedeekay" />
+    <meta name="description" content="i2p.reprepro" />
+    <meta name="keywords" content="trunk" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="showhider.css" />
+    <link rel="stylesheet" type="text/css" href="darklight.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="checkboxDarkLight">
+    <div class="container">
+    <div id="navbar">
+      <a href="#shownav">
+        Show navigation
+      </a>
+      <div id="shownav">
+        <div id="hidenav">
+          <ul>
+            <li>
+              <a href="..">
+                Up one level ^
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                index
+              </a>
+            </li>
+            <li>
+              <a href="DEBIAN.html">
+                DEBIAN
+              </a>
+            </li>
+            <li>
+              <a href="SETUP.html">
+                SETUP
+              </a>
+            </li>
+            <li>
+              <a href="debian-experimental/index.html">
+                debian-experimental/index.html
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                index.html
+              </a>
+            </li>
+            <li>
+              <a href="ubuntu/index.html">
+                ubuntu/index.html
+              </a>
+            </li>
+          </ul>
+          <br>
+          <a href="#hidenav">
+            Hide Navigation
+          </a>
+        </div>
+      </div>
+    </div>
+    <a id="returnhome" href="/">
+      /
+    </a>
+    <h1>
+      Updating the Debian server:
+    </h1>
+    <p>
+      Originally copied over from
+      <code>
+        i2p.i2p/debian-alt/doc/debian-build.txt
+      </code>
+      .
+      Reformatted and edited to reflect the process for the server at:
+    </p>
+    <ul>
+      <li>
+        <code>
+          deb.i2pgit.org
+        </code>
+        <a href="http://deb.i2pgit.org/">
+          http
+        </a>
+        ,
+        <a href="https://deb.i2pgit.org">
+          https
+        </a>
+      </li>
+      <li>
+        <code>
+          deb.i2p.net
+        </code>
+        <a href="http://deb.i2p.net/">
+          http
+        </a>
+        ,
+        <a href="https://deb.i2p.net">
+          https
+        </a>
+      </li>
+    </ul>
+    <p>
+      Should also apply to any server set up with the
+      <code>
+        i2p.reprepro
+      </code>
+      script.
+    </p>
+    <p>
+      See also:
+      <code>
+        debian-alt/doc/launchpad.txt
+      </code>
+    </p>
+    <p>
+      To update the server, your user must have at least the ability to copy files
+      to
+      <code>
+        /var/www/html/
+      </code>
+      , which includes any user who is allowed to
+      <code>
+        sudo -u www-data
+      </code>
+      .
+      It is possible to build the entire repository without sudo, but deployment is
+      restricted to users who can sudo.
+    </p>
+    <p>
+      This repository expressly assumes that the builds themselves are being done on
+      Launchpad and that the mirroring tool in use(
+      <code>
+        reprepro
+      </code>
+      ) obtains and verifies
+      the source and binary packages. Skip all the
+      <code>
+        scp
+      </code>
+      steps from
+      <code>
+        debian-build.txt
+      </code>
+      unless you know the specific reason(for example, updating the keyring package.)
+    </p>
+    <h2>
+      Before you start
+    </h2>
+    <p>
+      <code>
+        source
+      </code>
+      the file
+      <code>
+        env.sh
+      </code>
+      to make sure that
+      <code>
+        reprepro
+      </code>
+      always runs with the
+      correct arguments.
+    </p>
+    <pre><code class="language-sh">. env.sh
+</code></pre>
+    <p>
+      Also, if you don&rsquo;t have anything to do in
+      <code>
+        Step Zero(Sometimes)
+      </code>
+      , below, the
+      rest of the process is automated by running:
+    </p>
+    <pre><code class="language-sh">./reprepro.sh
+</code></pre>
+    <h3>
+      Step Zero(Sometimes): Set up any new distributions
+    </h3>
+    <pre><code class="language-sh"># todo when set up
+# To add or remove distributions, edit /var/www/debian/conf/distributions
+# and /var/www/debian/conf/updates
+# and then: reprepro -v export foo (for new foo)
+# and then: reprepro -v update foo
+# and:      reprepro -v copysrc foo buster i2p-keyring
+# and:      reprepro -v copysrc foo buster syndie
+# If you remove, you must do: reprepro clearvanished
+</code></pre>
+    <h3>
+      Step One: Mirror the packages from launchpad
+    </h3>
+    <pre><code class="language-sh"># copy built packages from launchpad
+for i in bionic focal jammy kinetic lunar mantic # if you added `foo` Ubuntu codename above, also add it here
+do
+	reprepro -v update $i
+done
+</code></pre>
+    <h3>
+      Step Two: Copy sources to targets
+    </h3>
+    <pre><code class="language-sh">reprepro -v copysrc sid focal i2p
+reprepro -v copysrc bookworm focal i2p
+reprepro -v copysrc bullseye focal i2p
+reprepro -v copysrc buster focal i2p
+</code></pre>
+    <h3>
+      Step Three: Check status of packages locally
+    </h3>
+    <pre><code class="language-sh"># check status
+reprepro ls i2p
+reprepro ls i2p-doc
+reprepro ls i2p-router
+reprepro ls libjbigi-jni
+</code></pre>
+    <div id="sourcecode">
+      <span id="sourcehead">
+        <strong>
+          Get the source code:
+        </strong>
+      </span>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/i2p.reprepro.git">
+            Source Repository: (https://github.com/eyedeekay/i2p.reprepro.git)
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>
+      <a href="https://geti2p.net/">
+        <img class="i2plogo" src="i2plogo.png"></img>
+        I2P
+      </a>
+    </div>
+  </body>
+</html>

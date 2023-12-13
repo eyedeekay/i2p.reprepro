@@ -52,6 +52,8 @@ it in the `./debian_reprepro` directory. `reprepro.sh` uses the host system dire
 the repository in the `./debian` directory. If you've run either script before, only new packages will be
 handled.
 
+When you're done, use `copy.sh` to copy the files into the web server directory.
+
 Steps for Maintainers:
 ----------------------
 
